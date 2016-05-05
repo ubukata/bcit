@@ -1,0 +1,86 @@
+body,html {
+  margin:0;
+  padding:0;
+}
+div {
+	display: block;
+}
+
+div.container {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+	display: inline-block;
+}
+
+.job-content {
+	margin-left: 30px;
+	width: 80%;
+}
+.company-logo {
+	float: right
+}
+
+ul.social-media, ul.navigation {
+	list-style: none;
+	float: right;
+}
+
+ul.social-media li, ul.navigation li{
+	display: inline-block;
+	position: relative;
+}
+
+ul.navigation {
+		margin-left: 20px;
+}
+
+footer {
+	height: 80px;
+	bottom: 0;
+}
+
+footer, .top-header {
+	background-color: #0077B5;
+	width: 100%;
+	position: relative;
+}
+
+.top-header {
+	background-color: #0077B5;
+	height: 6px;
+	clear: both;
+}
+
+footer p{
+	display: inline-block;
+	margin-left: 700px;
+	padding-right: 200px;
+}
+
+.vitor-footer-logo {
+	width: 100px;
+}
+
+.header {
+	display: inline-block;
+}
+
+.img-logo {
+	margin-right: 400px;
+}
+
+.duration {
+	font-style: italic;
+}
+
+.location {
+	font-weight: bold;
+}
+
+.content-title {
+	font-weight: bold;
+	color: #0077B5;
+	font-size: 120%;
+}
