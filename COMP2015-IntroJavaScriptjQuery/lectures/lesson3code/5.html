@@ -1,0 +1,30 @@
+<html><head><script>
+
+
+onload=function(){
+	var img = null;
+	
+	if(document.getElementById){
+		alert("getElementById");
+		img = document.getElementById("t");
+	}else if(document.images[0]){
+		alert("images 0");
+		img = document.images[0];
+	}else if(document.images['t']){
+		alert("images t");
+		img = document.images['t'];
+	}else if(document.t){
+		alert("document t");
+		img = document.t;
+	}else if(document.all){
+		alert('all');
+		img = document.all['t'];
+	}
+	img.src='dog.jpg';
+}
+
+</script></head><body>
+
+<img src="turtle.jpg" id="t" name="t">
+
+</body></html>

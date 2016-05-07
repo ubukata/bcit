@@ -1,0 +1,22 @@
+<html><head>
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<script>
+
+$(function(){
+	$('img').click(function(){
+		$(this).css('border-style', 'dashed');
+	});
+	
+	$('img:first').click();
+});
+
+
+</script></head><body>
+
+<img src="turtle.jpg" id="t" class="change whatever">
+<img src="fish.jpg"   id="f">
+<img src="cat.jpg"    id="c" class="change">
+
+</body></html>

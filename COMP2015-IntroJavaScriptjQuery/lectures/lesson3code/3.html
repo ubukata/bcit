@@ -1,0 +1,30 @@
+<html><head><script>
+
+function changeBorder(){
+	alert(x);
+	alert(y);
+	this.style.border="red solid 2px";
+}
+
+window.onload=function(){
+	pars = document.getElementsByTagName("p");
+
+	for(i = 0; i < pars.length; i++){
+		x = 500;
+		var y = 600;
+		let z = 700;
+		pars[i].onmouseover=changeBorder;
+	}
+	alert(y);
+	alert(z);
+}
+
+</script></head><body>
+
+<p>hi</p>
+<p>bye</p>
+<img src="fish.jpg">
+<p>the end</p>
+<p>...</p>
+
+</body></html>

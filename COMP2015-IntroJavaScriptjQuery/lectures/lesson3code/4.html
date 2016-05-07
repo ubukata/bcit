@@ -1,0 +1,22 @@
+<html><head><script>
+
+function change(){
+	this.width=this.width/2;
+}
+
+onload=function(){
+	images = document.images;
+	
+	for(let i = 0 ; i < images.length; i++){
+		images[i].ondblclick=change;
+	}
+}
+
+</script></head><body>
+
+<img src="turtle.jpg">
+<img src="bird.jpg">
+<img src="fish.jpg">
+
+
+</body></html>
