@@ -15,6 +15,31 @@ div {
 	display: block;
 }
 
+.main-home {
+	display: block;
+	width: 50%;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: 3%;
+}
+
+.top {
+	margin-top: 3%;
+}
+
+div.image {
+	display: block;
+	width: 350px;
+	margin-top: 2%;
+    margin-left: 10%;
+}
+
+div.image-right {
+	display: block;
+	width: 350px;
+    margin-left: 3%;
+}
+
 div.container {
     margin-top: auto;
     margin-bottom: auto;
@@ -48,7 +73,7 @@ ul.social-media li, ul.navigation li{
 }
 
 ul.navigation {
-		margin-left: 20px;
+	margin-left: 20px;
 }
 
 footer {
@@ -69,10 +94,17 @@ footer, .top-header {
 }
 
 footer p{
-	display: inline-block;
-	margin-left: 700px;
-	padding-right: 200px;
+	display: block;
+	width: 33%;
 	float: left;
+    text-align: center;
+}
+
+footer span{
+	display: block;
+	width: 33%;
+	float: left;
+	color: #0077B5;
 }
 
 .vitor-footer-logo {
@@ -167,4 +199,24 @@ div.logo>a {
     display: block;
     padding: 19px 0;
     color: black;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.left-margin {
+	margin-left: 10%;
+}
+
+.image-list{
+	width: auto;
+	height: auto;
+	margin-left: 10%;
+	margin-right: 4%;
+	display: block;
 }
