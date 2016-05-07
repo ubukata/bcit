@@ -66,6 +66,7 @@ ul.social-media {
 ul.navigation {
 	list-style: none;
 	float: right;
+	display: inline-block;
 }
 
 ul.social-media li, ul.navigation li{
@@ -188,6 +189,7 @@ div.logo>a {
 	width: 6em;
 	float: left;
 	margin-top: 20px;
+	display: block;
 }
 
 .logo-link > a {
