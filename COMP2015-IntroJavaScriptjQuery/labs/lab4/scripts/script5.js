@@ -1,0 +1,3 @@
+$(function(){
+	$(".cornered").corner("bevelfold");
+});

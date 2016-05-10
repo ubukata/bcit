@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<title>Lab 4 - Vitor Ubukata</title>
+		<script src="scripts/jquery-2.2.3.min.js"></script>
+		<script src="scripts/jquery-ui.min.js"></script>
+		<script src="scripts/stylesheetToggle.js"></script>
+		<script src="scripts/jquery.editinplace.js"></script>
+		<script src="scripts/jquery.corner.js"></script>
+		<link rel="stylesheet" href="styles/jquery-ui.min.css">
+		<link rel="stylesheet" href="styles/style1.css" title="style1">
+		<link rel="stylesheet" href="styles/style2.css" title="style2">
+		<link rel="stylesheet" href="styles/style3.css" title="style3">
+		<script src="scripts/script1.js"></script>
+		<script src="scripts/script2.js"></script>
+		<script src="scripts/script3.js"></script>
+		<script src="scripts/script4.js"></script>
+		<script src="scripts/script5.js"></script>
+		<style>
+			.container {
+				width: 80%;
+				margin-left: 10%;
+			}
+			
+			.cornered {
+				width: 29%;
+				margin-left: 2%;
+				margin-bottom: 2%;
+				display: block;
+				float: left;
+				background-color: #0077B5;
+				text-align: center;
+			}
+			
+			.cornered>h1{
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Script 1 - Accordion</h1>
+			<div id="accordion">
+			  <div class="group">
+				<h3>Me</h3>
+				<div>
+					<img src="images/vitor_photo.jpg" alt="Me" width="200px" />
+					<p>I am Vitor Ubukata and I am an Web Developer with a Bachelor in Information Systems from University of São Paulo in Brazil and currently I am persuing the Agile Development Certificate from BCIT in Vancouver in Canada.</p>
+				</div>
+			  </div>
+			  <div class="group">
+				<h3>My Family and Friends</h3>
+				<div>
+					<img src="images/image_4.jpg" alt="My Family and Friends" width="200px" />
+					
+					<ol>
+						<li>Me, my wife, sister and brother-in-law</li>
+						<li>Me and friends</li>
+						<li>My entire family!</li>
+						<li>Me and my wife</li>
+					</ol>
+				</div>
+			  </div>
+			  <div class="group">
+				<h3>My Hobbies - Fishing</h3>
+				<div>
+					<img src="images/image_1.jpg" alt="My Family and Friends" width="200px" />
+					<img src="images/image_2.jpg" alt="My Family and Friends" width="200px" />
+					<p>My passion is fishing, the first photo is one fish called Tucunare and only exists in Brazil.</p>
+					<p>The second photo is a fish called snook but apparently it is not a common fish here in Canada. I didn't go fishing here yet but I'm willing to try catching some salmons!</p>
+				</div>
+			  </div>
+			  <div class="group">
+				<h3>My Hobbies - Karting</h3>
+				<div>
+					<img src="images/image_5.jpg" alt="My Family and Friends" width="200px" />
+					<p>When I was used to live in Brazil I was going kart every month with some friends and I was really enjoying it but here I didn't have the opportunity to it yet.</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+			
+		<div class="container">
+			<h1>Script 2 - Datepicker</h1>
+			<p>Date: <input type="text" id="datepicker"></p>
+		</div>
+		
+		<div class="container">
+			<h1>Script 3 - Style switcher</h1>
+			<ul>
+				<li><a href="serversideSwitch.html%3Fstyle=style1.html" rel="style1" title="style1" class="styleswitch">styles1</a></li>
+				<li><a href="serversideSwitch.html%3Fstyle=style2.html" rel="style2" title="style2" class="styleswitch">styles2</a></li>
+				<li><a href="serversideSwitch.html%3Fstyle=style3.html" rel="style3" title="style3" class="styleswitch">styles3</a></li>
+			</ul>
+		</div>
+		
+		<div class="container">
+			<h1>Script 4 - In-Place editor</h1>
+			
+			<h2>First thing before you know me, what is your name?</h2>
+            <p id="editme1">
+                Put here your name!
+            </p>
+			
+			<p id="callback-editme1"></p>
+
+			<h2>Now i'm going to talk about me, fell free to change it if you want, just click in the paragraph bellow:</h2>
+            <p id="editme2">
+                I am Vitor Ubukata and I am an Web Developer with a Bachelor in Information Systems from University of São Paulo in Brazil and currently I am persuing the Agile Development Certificate from BCIT in Vancouver in Canada.
+				During my past 5 years I have been working with web development and using Agile techniques during the process of software development and I believe in the benefits that the agile can bring for the project.
+				Currently I am studying HTML5 and CSS, Node.js and Angular.
+				My next goal for my carrer is to work more with Agile in analysis and managament. I participated in some projects as a SCRUM Master but know with more knowledge and experience I believe can contributte even more in this role.
+				One of my technical goals for the future is to study more about Artificial Intelligence and Big Data, during my University I had the opportunity to develop the Bayes Theorem to analyse 1 million of twitters and categorize than into good and bad twitters and them I realized how many analysis over data we can do with Artificial Intelligence.
+            </p>
+
+			<h2>Do you like this example ? Please Rate it!</h2>
+            <p id="editme3">
+                Click here to rate!
+            </p>
+		</div>
+			
+		<div class="container">
+			<h1>Script 5 - Cornered Divs</h1>
+			<p>In this section I will list my technical skills</p>
+			<div>
+				<div class="cornered left-top">
+					<h1>ASP Net</h1>
+				</div>
+				<div class="cornered middle-top">
+					<h1>MVC</h1>
+				</div>
+				<div class="cornered right-top">
+					<h1>C#</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>DDD</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>SCRUM</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>Entity Framework</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>NHibernate</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>SQL Server 2005/2008</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>Oracle 10g/11g</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>Java Script</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>jQuery</h1>
+				</div>
+				<div class="cornered middle">
+					<h1>HTML</h1>
+				</div>
+				<div class="cornered left-bottom">
+					<h1>Git/Team Foundation Server</h1>
+				</div>
+				<div class="cornered middle-bottom">
+					<h1>Phonegap</h1>
+				</div>
+				<div class="cornered right-bottom">
+					<h1>Cordova</h1>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
