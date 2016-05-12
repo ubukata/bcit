@@ -15,6 +15,7 @@
 		<script src="scripts/script3.js"></script>
 		<script src="scripts/script4.js"></script>
 		<script src="scripts/script5.js"></script>
+		<script src="scripts/script6.js"></script>
 		<style>
 			.container {
 				width: 80%;
@@ -169,7 +170,67 @@
 				</div>
 			</div>
 		</div>
+		<div class="container" style="margin-top: 600px; margin-bottom: 500px;">
+			<h1>Script 6 - jquery ui tooltip</h1>
+			<p>For the script 6 I will talk about about chess based on wikipedia content.</p>
+			<p><strong>Chess</strong> is a two-player strategy board game played on a <a href="#" class="tooltip" id="chessboard" title="Chessboard" data-reference="chessboard-description">chessboard</a>, a checkered gameboard with 64 squares arranged in an eight-by-eight grid. Chess is played by millions of people worldwide, both amateurs and professionals.</p>
+			<p>Each player begins the game with 16 pieces: one <a href="#" class="tooltip" id="king" title="King" data-reference="king-description">king</a>, 
+				one <a href="#" class="tooltip" data-reference="queen-description" title="Queen">queen</a>, 
+				two <a href="#" class="tooltip" data-reference="rooks-description" title="Rook">rooks</a>, 
+				two <a href="#" class="tooltip" data-reference="knights-description" title="Knight">knights</a>, 
+				two <a href="#" class="tooltip" data-reference="bishops-description" title="Bishop">bishops</a>, 
+				and eight <a href="#" class="tooltip" data-reference="pawns-description" title="Pawn">pawns</a>. 
+				Each of the six piece types moves differently. The most powerful piece is the queen and the least powerful piece is the pawn. The objective is to
+				'<a href="#"class="tooltip" data-reference="checkmate-description"  title="Checkmate">checkmate</a>' the opponent's king by placing it under an inescapable threat of capture. To this end, a player's pieces are used to attack and capture the opponent's pieces, while supporting their own. In addition to checkmate, the game can be won by 
+				<a href="#" title="Resign" class="tooltip" data-reference="resign-description">voluntary resignation</a> by the opponent, which typically occurs when too much material is lost, or if checkmate appears unavoidable. A game may also result in a draw in several ways.</p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
 		
-		
+		<div id="chessboard-description" style="display: none;">
+			<p>A chessboard is the type of checkerboard used in the classic board game chess, and consists of 64 squares (eight rows and eight columns) and 32 pieces. The squares are arranged in two alternating colors (light and dark)</p>
+			<img src="images/chessboard.jpg" alt="chessboard" width="70" />
+		</div>
+		<div id="king-description" style="display: none;">
+			<p>In chess, the king is the most important piece. The object of the game is to trap the opponent's king so that its escape is not possible (checkmate). If a player's king is threatened with capture, it is said to be in check, and the player must remove the threat of capture on the next move. If this cannot be done, the king is said to be in checkmate, resulting in a loss for that player. Although the king is the most important piece, it is usually the weakest piece in the game until a later phase, the endgame. Players cannot make any move that places the king in check.</p>
+			<img src="images/black_king.jpg" alt="black king" width="70" />
+			<img src="images/white_king.jpg" alt="white king" width="70" />
+		</div>
+		<div id="queen-description" style="display: none;">
+			<p>The queen is the most powerful piece in the game of chess, able to move any number of squares vertically, horizontally or diagonally. Each player starts the game with one queen, placed in the middle of the first rank next to the king. Because of the value of a queen, it is sometimes used as bait to lure an opponent into a trap by a queen sacrifice. Another tactic is to use the queen to threaten the opponent's queen, to either retreat or to exchange the queen (losing both of them) to reduce the game to less powerful pieces. The queen is often used in conjunction with another piece, such as teamed with a bishop or rook, where the pieces could guard each other while threatening the opponent pieces.</p>
+			<img src="images/black_queen.jpg" alt="black queen" width="70" />
+			<img src="images/white_queen.jpg" alt="white queen" width="70" />
+		</div>
+		<div id="rooks-description" style="display: none;">
+			<p>A rook borrowed from Persian رخ rokh, Sanskrit रथ ratha, "chariot") is a piece in the strategy board game of chess. Formerly the piece was called the tower, marquess, rector, and comes (Sunnucks 1970). The term castle is considered informal, incorrect, or old-fashioned. Each player starts the game with two rooks, one in each of the corner squares on their own side of the board.</p>
+			<img src="images/black_rook.jpg" alt="black rook" width="70" />
+			<img src="images/white_rook.jpg" alt="white rook" width="70" />
+		</div>
+		<div id="knights-description" style="display: none;">
+			<p>The knight is a piece in the game of chess, representing a knight (armored cavalry). It is normally represented by a horse's head and neck. Each player starts with two knights, which begin on the row closest to the player, one square from each corner.</p>
+			<img src="images/black_knight.jpg" alt="black knight" width="70" />
+			<img src="images/white_knight.jpg" alt="white knight" width="70" />
+		</div>
+		<div id="bishops-description" style="display: none;">
+			<p>A bishop is a piece in the board game of chess. Each player begins the game with two bishops. One starts between the king's knight and the king, the other between the queen's knight and the queen. In algebraic notation the starting squares are c1 and f1 for White's bishops, and c8 and f8 for Black's bishops.</p>
+			<img src="images/black_bishop.jpg" alt="black bishop" width="70" />
+			<img src="images/white_bishop.jpg" alt="white bishop" width="70" />
+		</div>
+		<div id="pawns-description" style="display: none;">
+			<p>The pawn is the most numerous piece in the game of chess, and in most circumstances, also the weakest. It historically represents infantry, or more particularly, armed peasants or pikemen. Each player begins a game of chess with eight pawns, one on each square of the rank immediately in front of the other pieces. (In algebraic notation, the white pawns start on a2, b2, c2, ..., h2, while black pawns start on a7, b7, c7, ..., h7.)</p>
+			<img src="images/black_pawn.jpg" alt="black pawn" width="70" />
+			<img src="images/white_pawn.jpg" alt="white pawn" width="70" />
+		</div>
+		<div id="checkmate-description" style="display: none;">
+			<p>Checkmate (often shortened to mate) is a game position in chess in which a player's king is in check (threatened with capture) and there is no way to remove the threat. Checkmating the opponent wins the game. In chess the king is never actually captured – the game ends as soon as the king is checkmated. In master and serious amateur play, most players resign an inevitably lost game before being checkmated, and it is considered bad etiquette to continue playing in a completely hopeless position.</p>
+			<img src="images/checkmate.jpg" alt="checkmate" width="70" />
+		</div>
+		<div id="resign-description" style="display: none;">
+			<p>To concede loss of the game. A resignation is usually indicated by stopping the clocks, and sometimes by offering a handshake or saying "I resign". The traditional way to resign is by tipping over one's king, but this is rarely done nowadays. In master and serious amateur play, it is much more common for a game to be resigned than for it to end with checkmate, because experienced players can foresee checkmate well in advance.</p>
+		</div>
 	</body>
 </html>
