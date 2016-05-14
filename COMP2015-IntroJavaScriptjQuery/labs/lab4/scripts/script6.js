@@ -17,4 +17,12 @@ $(function(){
         }
       }
     });
+	
+	$(".container").eq(5).find("a").each(function(){
+		$(this).on("click", function(e){
+			e.stopPropagation();
+			e.preventDefault();
+			e.stopImmediatePropagation();
+		});
+	});
 });
