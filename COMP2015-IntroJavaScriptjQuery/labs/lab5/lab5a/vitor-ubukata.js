@@ -52,21 +52,18 @@ function createDivs(){
 
 function move(){
 	if(this.nextSibling != null && this.nextSibling.nextSibling != null){
-		//this.parentNode.id
 		this.parentNode.insertBefore(this, this.nextSibling.nextSibling);
 	}
 	else if (this.nextSibling != null){
 		this.parentNode.appendChild(this);
 	}
 	else{
-		var actualDiv = parseInt(this.parentNode.id);
-		if(actualDiv + 1 > 2){
-			actualDiv = 0;
+		if(this.parentNode.nextSibling.hasAttribute("id")){
+			this.parentNode.nextSibling.insertBefore(this, this.parentNode.nextSibling.childNodes[1]);
 		}
 		else{
-			actualDiv++;
+			document.getElementById("0").insertBefore(this, document.getElementById("0").childNodes[1]);
 		}
-		document.getElementById(actualDiv).insertBefore(this, document.getElementById(actualDiv).childNodes[1]);
 	}
 }
 

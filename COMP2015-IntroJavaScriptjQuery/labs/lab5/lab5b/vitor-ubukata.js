@@ -1,3 +1,6 @@
+var timerImageGrow = null;
+var timerImageMove = null;
+
 function createImages(){
 	for(var i = 0; i < 15; i++){
 		var img = document.createElement("img");
@@ -15,19 +18,21 @@ function createDivs(){
 	var div3 = document.createElement("div");
 	var div4 = document.createElement("div");
 	var div5 = document.createElement("div");
+	var div6 = document.createElement("div");
 	
 	var h1div1 = document.createElement("h1");
 	h1div1.appendChild(document.createTextNode("Image Liker by Vitor Ubukata"));
 	
-	var reset1div5 = document.createElement("input");
-	reset1div5.type = "button";
-	reset1div5.value = "reset";
-	reset1div5.onclick = resetAll;
-	div5.appendChild(reset1div5);
+	var reset1div6 = document.createElement("input");
+	reset1div6.type = "button";
+	reset1div6.value = "reset";
+	reset1div6.onclick = resetAll;
+	div6.appendChild(reset1div6);
 	
 	div2.id = "0";
 	div3.id = "1";
 	div4.id = "2";
+	div5.id = "3";
 	
 	var h2div2 = document.createElement("h2");
 	h2div2.class = "instructions";
@@ -41,13 +46,31 @@ function createDivs(){
 	h2div3.class = "instructions";
 	h2div4.appendChild(document.createTextNode("Images I Hate"));
 	div4.appendChild(h2div4);
+	var h2div5 = document.createElement("h2");
+	h2div5.class = "instructions";
+	h2div5.appendChild(document.createTextNode("Favorites of All Time"));
+	div5.appendChild(h2div5);
 	
 	document.body.appendChild(div1);
 	document.body.appendChild(div2);
 	document.body.appendChild(div3);
 	document.body.appendChild(div4);
 	document.body.appendChild(div5);
+	document.body.appendChild(div6);
 	createImages();
+	
+	var img = document.createElement("img");
+	img.src = "images/move.jpg";
+	img.alt = "I move just click";
+	img.style.width = "100px";
+	img.style.margin = "4px";
+	img.style.border = "red solid 1px";
+	img.style.position = "relative";
+	img.style.top = "10px";
+	img.onclick = moveImage;
+	img.onmouseover = growElement;
+	img.onmouseout = stopGrowElement;
+	document.body.appendChild(img);
 }
 
 function move(){
@@ -59,14 +82,12 @@ function move(){
 		this.parentNode.appendChild(this);
 	}
 	else{
-		var actualDiv = parseInt(this.parentNode.id);
-		if(actualDiv + 1 > 2){
-			actualDiv = 0;
+		if(this.parentNode.nextSibling.hasAttribute("id")){
+			this.parentNode.nextSibling.insertBefore(this, this.parentNode.nextSibling.childNodes[1]);
 		}
 		else{
-			actualDiv++;
+			document.getElementById("0").insertBefore(this, document.getElementById("0").childNodes[1]);
 		}
-		document.getElementById(actualDiv).insertBefore(this, document.getElementById(actualDiv).childNodes[1]);
 	}
 }
 
@@ -90,6 +111,29 @@ function resetAll(){
 	}
 	
 	createImages();
+}
+
+function growElement(){
+	var imgToGrow = this;
+	timerImageGrow = setInterval(function(){imgToGrow.style.width = parseInt(imgToGrow.style.width) + 1 + 'px';}, 100);
+}
+
+function stopGrowElement(){
+	if(timerImageGrow != null){
+		clearInterval(timerImageGrow);
+		timerImageGrow = null;
+	}
+}
+
+function moveImage(){
+	if(timerImageMove == null){
+		var imgToMove = this;
+		timerImageMove = setInterval(function(){imgToMove.style.top = parseInt(imgToMove.style.top) + 1 + 'px';}, 100);
+	}
+	else{
+		clearInterval(timerImageMove);
+		timerImageMove = null;
+	}
 }
 
 window.onload = function(){
