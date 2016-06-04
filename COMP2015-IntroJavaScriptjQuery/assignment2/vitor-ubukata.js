@@ -114,7 +114,24 @@ var timer1 = null, timer2 = null;
 function moveImage(){
 	if(this.getAttribute("timer") === "timer1"){
 		if(timer1 == null){
-			
+			var imgToMove = this;
+			var timeTimer1 = parseInt(this.getAttribute("movespeed"));
+			timer1 = setInterval(function(){imgToMove.style.left = parseInt(imgToMove.style.left) + 1 + 'px';}, timeTimer1);
+		}
+		else{
+			clearInterval(timer1);
+			timer1 = null;
+		}
+	}
+	else{
+		if(timer2 == null){
+			var imgToMove = this;
+			var timeTimer2 = parseInt(this.getAttribute("movespeed"));
+			timer2 = setInterval(function(){imgToMove.style.left = parseInt(imgToMove.style.left) + 1 + 'px';}, timeTimer2);
+		}
+		else{
+			clearInterval(timer2);
+			timer2 = null;
 		}
 	}
 }
@@ -145,9 +162,11 @@ function addEvents(){
 		var img5 = document.createElement("img");
 		img5.src = "images/5.jpg";
 		img5.alt = "5 image";
-		img5.setAttribute("movespeed", 2000);
+		img5.setAttribute("movespeed", 200);
 		img5.setAttribute("timer", "timer1");
-		img.ondblclick = moveImage;
+		img5.onclick = moveImage;
+		img5.style.left = "10px";
+		img5.style.position = "relative";
 		document.body.appendChild(img5);
 		var br = document.createElement("br");
 		document.body.appendChild(br);
@@ -155,13 +174,19 @@ function addEvents(){
 		var img6 = document.createElement("img");
 		img6.src = "images/6.jpg";
 		img6.alt = "6 image";
-		img6.setAttribute("movespeed", 1000);
+		img6.setAttribute("movespeed", 100);
 		img6.setAttribute("timer", "timer2");
-		img.ondblclick = moveImage;
+		img6.style.left = "10px";
+		img6.style.position = "relative";
+		img6.onclick = moveImage;
 		document.body.appendChild(img6);
 	};
 	
-	
+	$(window.document).on("click", "input[type='button']", function(e){
+		$("img").css({"border-color": "red", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+	});
 }
 
 window.onload = function(){
