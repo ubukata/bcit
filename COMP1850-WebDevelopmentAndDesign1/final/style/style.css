@@ -1,0 +1,49 @@
+body,html {
+	margin:0;
+	padding:0;
+}
+
+.navigation {
+	margin-top: 0;
+    top: 0;
+	left:0;
+    background-color: #333;
+    display: block;
+    min-height: 50px;
+    position: fixed;
+	width:100%;
+}
+
+.main {
+	margin-top: 50px;
+}
+
+.menu > ul{
+    float: right;
+    margin: 0;
+    display: inline-block;
+	list-style: none;
+}
+
+.menu ul li{
+    display: inline-block;
+}
+
+.menu > ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 15px 15px 15px 15px;
+    position: relative;
+    display: block;
+}
+
+.main {
+}
+
+.container {
+	width: 900px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
