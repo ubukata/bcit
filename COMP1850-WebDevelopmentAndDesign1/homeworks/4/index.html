@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Survey</title>
+<style>
+form {
+	width: 400px;
+}
+</style>
+</head>
+
+<body>
+	<h1>Music Survey</h1>
+	<form>
+		<b>Name:</b>
+		<br/>
+		<input type="text" name="name"/>
+		<br/>
+		<b>E-mail:</b>
+		<br/>
+		<input type="text" name="email"/>
+		<br/>
+		<br/>
+		<fieldset>
+			<legend><b>Select your favourite type of music:</b></legend>
+			<ul style="list-style-type: none;" name="favourites-musics">
+				<li><input type="checkbox" name="favourite-music"> <b>Pop</b></li>
+				<li><input type="checkbox" name="favourite-music"> <b>Classical</b></li>
+				<li><input type="checkbox" name="favourite-music"> <b>Rock</b></li>
+				<li><input type="checkbox" name="favourite-music"> <b>Folk</b></li>
+				<li><input type="checkbox" name="favourite-music"> <b>Rap</b></li>
+				<li><input type="checkbox" name="favourite-music"> <b>Other</b></li>
+			</ul>
+		</fieldset>
+		<br/>
+		<fieldset>
+			<legend><b>Select how ofter do you purchase Music CDs:</b></legend>
+			<ul style="list-style-type: none;" name="cds-purchases">
+				<li><input type="radio" name="cds-purchase"> <b>Weekly</b></li>
+				<li><input type="radio" name="cds-purchase"> <b>A few CDs each year</b></li>
+				<li><input type="radio" name="cds-purchase"> <b>Monthly</b></li>
+				<li><input type="radio" name="cds-purchase"> <b>Never purchase</b></li>
+			</ul>
+		</fieldset>
+		<br/>
+		<b>Select the location you listen to music:</b>
+		<br/>
+		<select size="3" multiple="multiple" name="locations-music">
+			<option value="1">At home</option>
+			<option value="2">In the car</option>
+			<option value="3">Anywhere (MP3 Player)</option>
+			<option value="4">Other</option>
+		</select>
+		<br/>
+		<br/>
+		<b>What role does music play in your life?</b>
+		<br/>
+		<textarea name="music-role" rows="3" style="width: 100%"></textarea>
+		<br/>
+		<input type="submit" title="Submit"/>
+		<input type="reset" title="Reset"/>
+	</form>
+</body>
+
+</html>
