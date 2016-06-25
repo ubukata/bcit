@@ -3,28 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MEAN Stack - A basic overview</title>
-	<link rel="stylesheet" href="style/style.css" />
+	<link rel="stylesheet" href="content/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
 </head>
 
 <body>
 	<nav class="navigation">
-		<div class="container">
+		<div class="header">
+			<a href="#" class="logo"><img src="content/images/meanstack_logo.jpg" class="logo-image"></a>
 			<div class="menu">
 				<ul>
 					<li>
 						<a href="#" title="Home">Home</a>
 					</li>
 					<li>
-						<a href="#" title="Home">MongoDB</a>
+						<div class="dropdown">
+							<a href="#" class="menu-dropdown" title="Home">MongoDB</a>
+							<div class="dropdown-content">
+							  <a href="#">Link 1</a>
+							  <a href="#">Link 2</a>
+							  <a href="#">Link 3</a>
+							</div>
+						</div>
 					</li>
 					<li>
-						<a href="#" title="Home">Express</a>
+						<a href="#" class="menu-dropdown" title="Home">Express</a>
 					</li>
 					<li>
-						<a href="#" title="Home">AngularJS</a>
+						<a href="#" class="menu-dropdown" title="Home">AngularJS</a>
 					</li>
 					<li>
-						<a href="#" title="Home">Node.js</a>
+						<a href="#" class="menu-dropdown" title="Home">Node.js</a>
 					</li>
 				</ul>
 			</div>
@@ -33,36 +42,86 @@
 
 	<div class="main">
 		<div class="container">
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+			<h3>MEAN stands for:</h3>
+			<table class="description">
+				<tbody>
+					<tr>
+						<td><img src="content/images/mongodb.png"/></td>
+						<td><p>MongoDB is the leading NoSQL database, empowering businesses to be more agile and scalable.</p></td>
+					</tr>
+					<tr>
+						<td><img src="content/images/express.png"/></td>
+						<td><p>Express is a minimal and flexible node.js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications.</p></td>
+					</tr>
+					<tr>
+						<td><img src="content/images/angularjs.png"/></td>
+						<td><p>AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.</p></td>
+					</tr>
+					<tr>
+						<td><img src="content/images/nodejs.png"/></td>
+						<td><p>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.</p></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div class="container">
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+			<h3>Why MEAN?</h3>
+			<p><b>MEAN makes code isomorphic.</b> The simplicity doesn't stop with using JavaScript on the server. By going MEAN, you can enjoy that same JavaScript on the client, too. If you write code for Node and decide it’s better placed in AngularJS, you can move it over with ease, and it's almost certain to run the same way. This flexibility makes programming MEAN-based apps significantly easier. Plus, if you're staffing up a project, you don't need to look for a PHP expert and a JavaScript expert, or a front-end and a back-end specialist. Instead, it’s all JavaScript across the stack.</p>
+			<p><b>JSON everywhere.</b> AngularJS and MongoDB both speak JSON, as do Node.js and Express.js. The data flows neatly among all the layers without rewriting or reformatting. MEAN uses the same JSON format for data everywhere, which makes it simpler and saves time reformatting as it passes through each layer. Plus, JSON’s ubiquity through the MEAN stack makes working with external APIs that much easier: GET, manipulate, present, POST, and store all with one format.</p>
+			<p><b>MongoDB is built for the cloud.</b> This modern database comes equipped with automatic sharding and full cluster support, right out of the box. Plug in MongoDB and it spreads across your cluster of servers to offer failover support and automatic replication. Given the ease with which apps can be developed, tested, and hosted in the cloud, there’s little reason not to consider MongoDB for your next project.</p>
+			<p><b>Node.js is superfast.</b>  Apache was great, but these days, Node.js is often flat-out faster. A number of <a href="http://zgadzaj.com/benchmarking-nodejs-basic-performance-tests-against-apache-php" target="_blank">benchmarks</a> show that Node.js offers better performance, while doing much more. Perhaps it's the age of the code. Perhaps the Node.js event-driven architecture is quicker. It doesn't matter. These days, especially among impatient mobile device users, shaving even milliseconds off your app’s performance is important and Node.js can do that, while offering a Turing-complete mechanism for reprogramming it.</p>
 		</div>
 		<div class="container">
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+			<h3>Official Resources</h3>
+			<table class="description">
+				<tbody>
+					<tr>
+						<td>MongoDB</td>
+						<td><a href="https://www.mongodb.com">https://www.mongodb.com</a></td>
+					</tr>
+					<tr>
+						<td>Express</td>
+						<td><a href="http://expressjs.com">http://expressjs.com</a></td>
+					</tr>
+					<tr>
+						<td>AngularJS</td>
+						<td><a href="https://angularjs.org">https://angularjs.org</a></td>
+					</tr>
+					<tr>
+						<td>Node.js</td>
+						<td><a href="https://nodejs.org">https://nodejs.org</a></td>
+					</tr>
+					<tr>
+						<td>MEAN course used as base for this project</td>
+						<td><a href="http://webschool.io">http://webschool.io</a></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div class="container">
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-		</div>
-		<div class="container">
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
-			<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+			<h3>About this project</h3>
+			<p>I am Vitor Ubukata and I am an Web Developer with a Bachelor in Information Systems from University of São Paulo in Brazil and currently I am persuing the Agile Development Certificate from BCIT in Vancouver in Canada. Since de past five years I have been working with Microsoft technologies for Web development and I thought it was time to learn something new. I searched a lot about new languages to learn like Ruby using Rails (RoR), node.js, python using Django. First I was decided to learn RoR but since I already knew something in JavaScript I moved my studies to node.js. My friend sent me a free course on MEAN in Portuguese and since them I have being doing it.</p>
+			<p>This overview over MEAN Stack is my final project for my class of Web Development at BCIT, I am doing this tutorial based in the course available here. I couldn’t finish all course but I provided the basics for some stages of the MEAN Stack development.</p>
+			<p>I hope you like it!</p>
 		</div>
 	</div>
 
 </body>
 
 <footer>
+	<div>
+		<span>.</span>
+		<p>© Vitor Ubukata - Web Developer</p>
 
+		<ul class="nav social-media">
+		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="content/images/email_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://www.linkedin.com/in/vitor-ubukata-89253121" target="_blank" class="linkedin"><img alt="Linkedin" src="content/images/linkedin_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://github.com/ubukata" target="_blank" class="linkedin"><img alt="GitHub" src="content/images/github_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://www.facebook.com/vitor.ubukata" target="_blank" class="facebook"><img alt="Facebook" src="content/images/facebook_logo.png" width="35" height="33"></a></li>
+		  <li><a href="http://www.twitter.com/ubkta" target="_blank" class="twitter"><img alt="Twitter" src="content/images/twitter_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://plus.google.com/u/0/109164618915536663943" target="_blank" class="google-plus"><img alt="Google Plus" src="content/images/googleplus_logo.png" width="35" height="34"></a></li>
+		</ul>
+	</div>
 </footer>
 
 </html>

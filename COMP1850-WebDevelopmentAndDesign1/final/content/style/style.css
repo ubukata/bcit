@@ -1,0 +1,147 @@
+body,html {
+	margin:0;
+	padding:0;
+    width: 100%;
+    font-family: 'Ubuntu', serif;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    position: relative;
+    height: 80px;
+    bottom: 0;
+}
+
+footer span {
+    display: block;
+    width: 33%;
+    float: left;
+    color: #333;
+}
+
+footer p {
+    display: block;
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+ul.social-media {
+    list-style: none;
+    float: left;
+    margin-left: 30px;
+}
+
+ul.social-media li {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+	color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.navigation {
+	margin-top: 0;
+    top: 0;
+	left:0;
+    background-color: #333;
+    display: block;
+    min-height: 50px;
+    position: fixed;
+	width:100%;
+}
+
+.main {
+	margin-top: 100px;
+}
+
+.menu > ul{
+    float: right;
+    margin: 0;
+    display: inline-block;
+	list-style: none;
+}
+
+.menu ul li{
+    display: inline-block;
+}
+
+.menu > ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 15px 15px 15px 15px;
+    position: relative;
+    display: block;
+}
+
+.logo-image {
+	display: block;
+    height: 45px;
+    width: 115px;
+}
+
+.logo {
+    float: left;
+    padding: 2px 0 0 2px;
+}
+
+#logo-text {
+    color: white;
+    font-weight: 500;
+}
+
+.container {
+    width: 900px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+.header {
+    width: 900px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table.description tr{
+    margin-top: 20px;
+}
+
+table.description td{
+    padding: 10px 0 0 10px;
+}
+
+table.description img{
+    height: 80px;
+}
