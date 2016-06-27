@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MEAN Stack - A basic overview</title>
+	<link rel="stylesheet" href="../content/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<script src="../content/code-mirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="../content/code-mirror/lib/codemirror.css">
+	<script src="../content/code-mirror/mode/javascript/javascript.js"></script>
+	<script type="text/javascript" async="" src="../scripts/main.js"></script>
+</head>
+
+<body>
+	<nav class="navigation">
+		<div class="header">
+			<a href="../index.html" class="logo"><img src="../content/images/meanstack_logo.jpg" class="logo-image"></a>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="../index.html" title="Home">Home</a>
+					</li>
+					<li>
+						<div class="dropdown">
+							<a href="#" class="menu-dropdown" title="Home">MongoDB</a>
+							<div class="dropdown-content">
+							  <a href="#">Link 1</a>
+							  <a href="#">Link 2</a>
+							  <a href="#">Link 3</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Express</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">AngularJS</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Node.js</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main">
+		<div class="container">
+			<h2>Documents</h2>
+			<p>MongoDB is a document database and <em>document</em> is the unit of storing data in a MongoDB database.</p>
+			<p><em>Document</em> use JSON (JavaScript Object Notation, is a lightweight, thoroughly explorable format used to interchange data between various applications) style for storing data.</p>
+			<p>A simple example of a JSON document is as follows :</p>
+			<textarea class="code-mirror">
+				{ site : "bcit.ca" }
+    		</textarea>
+    		<p>Documents are analogous to the records of a RDBMS. Insert, update and delete operations can be performed on a collection. The following table will help you to understand the concept more easily :</p>
+    		<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>RDBMS</th>
+						<th>MongoDB</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>Table</td>
+						<td>Collection</td>
+					</tr>
+					<tr>
+						<td>Column</td>
+						<td>Key</td>
+					</tr>
+					<tr>
+						<td>Value</td>
+						<td>Value</td>
+					</tr>
+					<tr>
+						<td>Records / Rows</td>
+						<td>Document / Object</td>
+					</tr>
+				</tbody>
+         	</table>
+    		<p>The following table shows the various datatypes which may be used in MongoDB.</p>
+    		<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>Data Types</th>
+						<th>Description</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>string</td>
+						<td>May be an empty string or a combination of characters.</td>
+					</tr>
+					<tr>
+						<td>integer</td>
+						<td>Digits.</td>
+					</tr>
+					<tr>
+						<td>boolean</td>
+						<td>Logical values True or False.</td>
+					</tr>
+					<tr>
+						<td>double</td>
+						<td>A type of floating point number.</td>
+					</tr>
+					<tr>
+						<td>null</td>
+						<td>Not zero, not empty.</td>
+					</tr>
+					<tr>
+						<td>array</td>
+						<td>A list of values.</td>
+					</tr>
+					<tr>
+						<td>object</td>
+						<td>An entity which can be used in programming. May be  a value, variable, function, or data structure.</td>
+					</tr>
+					<tr>
+						<td>timestamp</td>
+						<td>A 64 bit value referring to a time and unique on a single "mongod" instance. The first 32 bit of this value refers to seconds since the UTC January 1, 1970. And last 32 bits refer to the incrementing ordinal for operations within a given second.</td>
+					</tr>
+					<tr>
+						<td>Internationalized Strings</td>
+						<td>UTF-8 for strings.</td>
+					</tr>
+					<tr>
+						<td>Object IDs</td>
+						<td>Every MongoDB object or document must have an Object ID which is unique. This is a BSON(Binary JavaScript Object Notation, which is the binary interpretation of JSON) object id, a 12-byte binary value which has a very rare chance of getting duplicated. This id consists of  a 4-byte timestamp (seconds since epoch), a 3-byte machine id, a 2-byte process id, and a 3-byte counter.</td>
+					</tr>
+				</tbody>
+         	</table>
+		</div>
+		<div class="container">
+			<h2>Collections</h2>
+			<p>A collection may store number of documents. A collection is analogous to a table of a RDBMS.</p>
+			<p>A collection may store documents those who are not same in structure. This is possible because MongoDB is a Schema-free database. In a relational database like MySQL, a schema defines the organization / structure of data in database. MongoDB does not require such a set of formula defining structure of data. So, it is quite possible to store documents of varying structures in a collection. Practically, you don't need to define a column and it's datatype unlike in RDBMS, while working with MongoDB.</p>
+			<p>In the following code, it is shown that two MongoDB documents, belongs to same collection, storing data of different structures.</p>
+			<textarea class="code-mirror">
+				{"tutorial" : "NoSQL"} {"topic_id" : 7}
+    		</textarea>
+    		<p>A collection is created, when the first document is inserted.</p>
+		</div>
+	  	<div class="container">
+	  		<p class="next-lesson"><a href="installation.html" title="Next: 1. Installation">Next: 1. Installation</a></p>
+	  	</div>
+	</div>
+</body>
+
+<footer>
+	<div>
+		<span>.</span>
+		<p>© Vitor Ubukata - Web Developer</p>
+		<ul class="nav social-media">
+		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="../content/images/email_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://www.linkedin.com/in/vitor-ubukata-89253121" target="_blank" class="linkedin"><img alt="Linkedin" src="../content/images/linkedin_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://github.com/ubukata" target="_blank" class="linkedin"><img alt="GitHub" src="../content/images/github_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://www.facebook.com/vitor.ubukata" target="_blank" class="facebook"><img alt="Facebook" src="../content/images/facebook_logo.png" width="35" height="33"></a></li>
+		  <li><a href="http://www.twitter.com/ubkta" target="_blank" class="twitter"><img alt="Twitter" src="../content/images/twitter_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://plus.google.com/u/0/109164618915536663943" target="_blank" class="google-plus"><img alt="Google Plus" src="../content/images/googleplus_logo.png" width="35" height="34"></a></li>
+		</ul>
+	</div>
+</footer>
+</html>

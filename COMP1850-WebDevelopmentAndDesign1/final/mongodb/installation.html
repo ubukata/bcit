@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MEAN Stack - A basic overview</title>
+	<link rel="stylesheet" href="../content/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<script src="../content/code-mirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="../content/code-mirror/lib/codemirror.css">
+	<script src="../content/code-mirror/mode/javascript/javascript.js"></script>
+</head>
+
+<body>
+	<nav class="navigation">
+		<div class="header">
+			<a href="../index.html" class="logo"><img src="../content/images/meanstack_logo.jpg" class="logo-image"></a>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="../index.html" title="Home">Home</a>
+					</li>
+					<li>
+						<div class="dropdown">
+							<a href="#" class="menu-dropdown" title="Home">MongoDB</a>
+							<div class="dropdown-content">
+							  <a href="#">Link 1</a>
+							  <a href="#">Link 2</a>
+							  <a href="#">Link 3</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Express</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">AngularJS</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Node.js</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main">
+		<div class="container">
+			<h2>1. Installation</h2>
+			<ol class="circles-list">
+			  <li><p>The first part of MongoDB course is the installation, for that you can access here for the <a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank">last version</a> of MongoDB.</p></li>
+			  <li>
+			  	<p>After downloading it you can execute it and install it, it is a pretty straight forward installation like any other Windows program (next, next, finish).</p>
+			  	<img src="../content/images/mongodb/installation-init.png" title="Installing mongodb - Windows">
+			  	<img src="../content/images/mongodb/installation-finish.png" title="Finish installation mongodb - Windows">
+		  		<p class="image-description">MongoDB Installation - Windows.</p>
+			  	<p>Ok, now we have installed the MongoDB Server.</p>
+			  </li>
+			</ol>
+		</div>
+		<div class="container">
+			<h2>Initial Configurations</h2>
+		  	<p>If you want to make sure that everything is working you can use your Command Prompt(cmd), or GitBash, or PowerShell to test it. Using cmd and into the installation bin folder we can execute: <b>mongod</b>.</p>
+		  	<img src="../content/images/mongodb/mongod.png" title="Mongod command usage">
+		  	<p class="image-description">Mongod command usage.</p>
+		  	<p>With the server running  in localhost port 27017 we can try to connect using another cmd also in the bin folder and execute: <b>mongo</b>.</p>
+		  	<img src="../content/images/mongodb/mongo.png" title="Mongo command usage">
+		  	<p class="image-description">Mongo command usage.</p>
+		  	<p>It will automatically connect in the test database as you can see above.</p>
+		  	<p>But opening the cmd and going into the bin folder is pretty annoying so you can configure your Environment Variables to use <b>mongod</b> and <b>mongo</b> anywhere. For that you can access the <em>Advanced System Setting</em> by right clicking <em>Computer</em> in a <em>file-explorer</em> and going to <em>Properties</em>.</p>
+		  	<p>After that you can access your <em>Environment Variables</em> and under <em>System Variables</em> you can edit the <em>Path</em> of it. Make sure you put the <em>bin folder</em> of the MongoDB installation in it.</p>
+		  	<img src="../content/images/mongodb/environment-variables.png" title="Environment Variables">
+		  	<p class="image-description">Environment Variables.</p>
+		  	<p>Now you are ready to use <b>mongod</b> and <b>mongo</b> as soon as you open your cmd.</p>
+		</div>
+		<div class="container">
+			<h2>Usefull stuff</h2>
+		  	<p>Cmd is not so friendly to use, you can also use something like <a href="https://github.com/TylerBrock/mongo-hacker" target="_blank">Mongo Hacker</a> to improve the way you see your queries and data or you can use softwares like <a href="https://robomongo.org" target="_blank">Robomongo</a> a free native and cross-plataform MongoDB manahger to connect to your Database.</p>
+		  	<p>I decided to use the Mongo Hacker but when I was trying to use it I had some troubles since it was built in a Unix OS environment, I searched a lot and find a solution grabbing some information in different topics in the <a href="http://stackoverflow.com" target="_blank">Stack Overflow</a> website.</p>
+		  	<p>Basically the Mongo Hacker is a configuration file for the color syntax that MongoDB reads when start. You can file my final JavaScript file <a href="../content/.mongorc.js" target="_blank">here</a> and it must be placed under C:\Users\{YourFolder}.</p>
+		  	<img src="../content/images/mongodb/without-mongohacker.png" title="MongoDB without Mongo Hacker">
+		  	<p class="image-description">Without Mongo Hacker.</p>
+		  	<img src="../content/images/mongodb/with-mongohacker.png" title="MongoDB without Mongo Hacker">
+		  	<p class="image-description">With Mongo Hacker.</p>
+	  	</div>
+	  	<div class="container">
+	  		<p class="next-lesson"><a href="initial-commands.html" title="Next: 2. Initial Commands">Next: 2. Initial Commands</a></p>
+	  	</div>
+	</div>
+</body>
+
+<footer>
+	<div>
+		<span>.</span>
+		<p>© Vitor Ubukata - Web Developer</p>
+		<ul class="nav social-media">
+		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="../content/images/email_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://www.linkedin.com/in/vitor-ubukata-89253121" target="_blank" class="linkedin"><img alt="Linkedin" src="../content/images/linkedin_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://github.com/ubukata" target="_blank" class="linkedin"><img alt="GitHub" src="../content/images/github_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://www.facebook.com/vitor.ubukata" target="_blank" class="facebook"><img alt="Facebook" src="../content/images/facebook_logo.png" width="35" height="33"></a></li>
+		  <li><a href="http://www.twitter.com/ubkta" target="_blank" class="twitter"><img alt="Twitter" src="../content/images/twitter_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://plus.google.com/u/0/109164618915536663943" target="_blank" class="google-plus"><img alt="Google Plus" src="../content/images/googleplus_logo.png" width="35" height="34"></a></li>
+		</ul>
+	</div>
+</footer>
+</html>
