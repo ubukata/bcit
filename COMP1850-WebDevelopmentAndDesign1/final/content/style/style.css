@@ -239,8 +239,10 @@ ol.circles-list > li > img{
 }
 
 pre, code {
-    white-space: pre-line;
     padding-left: 20px;
+	background-color: #f7f7f7;
+	width: 100%;
+	overflow:auto;
 }
 
 code {

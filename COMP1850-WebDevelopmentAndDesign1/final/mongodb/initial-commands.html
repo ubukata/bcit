@@ -54,44 +54,44 @@
 			<p>Next we can create a new database or switch to one using the command <b>use</b>.</p>
 			<pre>
 				<code>
-					use my-new-database
-					switched to db my-new-database
+use my-new-database
+switched to db my-new-database
 				</code>
 			</pre>
 			<p>Another way to already connect in a database instance instead if the test instance you can use the command <b>mongo</b> followed by the <b>database name</b>.</p>
 			<pre>
 				<code>
-					mongo my-database-name
-					connecting to: my-database-name
+mongo my-database-name
+connecting to: my-database-name
 				</code>
 			</pre>
 			<p>If you want to check which database your are now you can use the command <b>db</b> and it will return the name of the current database.</p>
 			<pre>
 				<code>
-					db
-					my-new-database
+db
+my-new-database
 				</code>
 			</pre>
 			<p>The command <b>show dbs</b> will list all databases available in your mongodb server.</p>
 			<pre>
 				<code>
-					show dbs
-					local  0.078GB
+show dbs
+local  0.078GB
 				</code>
 			</pre>
 			<h2>Drop database</h2>
 			<p>To drop a database we just execute the command dropDatabase() from db object.</p>
 			<pre>
 				<code>
-					use bank_to_remove
-					switched to db bank_to_remove
+use bank_to_remove
+switched to db bank_to_remove
 
-					db.dropDatabase()
+db.dropDatabase()
 
-					{
-					  "dropped": "bank_to_remove",
-					  "ok": 1
-					}
+{
+  "dropped": "bank_to_remove",
+  "ok": 1
+}
 				</code>
 			</pre>
 		</div>
@@ -100,45 +100,45 @@
 			<p>To list all collections available in your database you can use the command <b>show collections</b>.</p>
 			<pre>
 				<code>
-					C:\>mongo MyApp
-					MongoDB shell version: 3.2.7
-					connecting to: MyApp
-					Mongo-Hacker 0.0.13
-					(mongod-3.2.7) MyApp> show collections
-					restaurants → 10.138MB / 4.457MB
+C:\>mongo MyApp
+MongoDB shell version: 3.2.7
+connecting to: MyApp
+Mongo-Hacker 0.0.13
+(mongod-3.2.7) MyApp> show collections
+restaurants → 10.138MB / 4.457MB
 				</code>
 			</pre>
 			<p>If you would like to create a new empty collection you must use the command <b>db.createCollection(“name”)</b>.</p>
 			<pre>
 				<code>
-					(mongod-3.2.7) MyApp> db.createCollection("new_collection")
-					{
-					  "ok": 1
-					}
-					(mongod-3.2.7) MyApp> show collections
-					new_collection    →  0.000MB / 0.004MB
-					restaurants       → 10.138MB / 4.457MB
+(mongod-3.2.7) MyApp> db.createCollection("new_collection")
+{
+  "ok": 1
+}
+(mongod-3.2.7) MyApp> show collections
+new_collection    →  0.000MB / 0.004MB
+restaurants       → 10.138MB / 4.457MB
 				</code>
 			</pre>
 			<p>More information about it you can consult <a href="https://docs.mongodb.com/manual/reference/method/db.createCollection" target="_blank" title="MongoDB Documentation">here</a><p>
 			<p>Also the first time a new item is inserted in a collection that doesn’t exists the collection will also be created.</p>
 			<pre>
 				<code>
-					(mongod-3.2.7) MyApp> var json = {test: true}
-					(mongod-3.2.7) MyApp> db.test.insert(json)
-					Inserted 1 record(s) in 12ms
-					WriteResult({
-					  "nInserted": 1
-					})
-					(mongod-3.2.7) MyApp> db.test.insert(json)
-					Inserted 1 record(s) in 1ms
-					WriteResult({
-					  "nInserted": 1
-					})
-					(mongod-3.2.7) MyApp> show collections
-					new_collection    →  0.000MB / 0.004MB
-					restaurants       → 10.138MB / 4.457MB
-					test              →  0.000MB / 0.016MB
+(mongod-3.2.7) MyApp> var json = {test: true}
+(mongod-3.2.7) MyApp> db.test.insert(json)
+Inserted 1 record(s) in 12ms
+WriteResult({
+  "nInserted": 1
+})
+(mongod-3.2.7) MyApp> db.test.insert(json)
+Inserted 1 record(s) in 1ms
+WriteResult({
+  "nInserted": 1
+})
+(mongod-3.2.7) MyApp> show collections
+new_collection    →  0.000MB / 0.004MB
+restaurants       → 10.138MB / 4.457MB
+test              →  0.000MB / 0.016MB
 				</code>
 			</pre>
 			<p>The first insertion will take a little bit longer than the next ones, in the example above the first one took 12ms and the next one 1ms. This happens because for the first insertion MongoDB will pre allocate the necessary space on disk for the new collection.</p>
@@ -148,7 +148,7 @@
 			<p>To import data from a file to a new collection we can use the command <b>mongoimport</b>.</p>
 			<pre>
 				<code>
-					mongoimport --db database --collection collection --drop --file data.json
+mongoimport --db database --collection collection --drop --file data.json
 				</code>
 			</pre>
 			<img src="../content/images/mongodb/mongoimport.png" Title="mongoimport usage">
@@ -156,7 +156,7 @@
 			<p>To export data from a collection to a new file we can use the command <b>mongoexport</b>.</p>
 			<pre>
 				<code>
-					mongoexport --db data_base_name --collection collection_name --out my_collection.json
+mongoexport --db data_base_name --collection collection_name --out my_collection.json
 				</code>
 			</pre>
 		</div>

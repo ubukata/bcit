@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MEAN Stack - A basic overview</title>
+	<link rel="stylesheet" href="../content/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<script src="../content/code-mirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="../content/code-mirror/lib/codemirror.css">
+	<script src="../content/code-mirror/mode/javascript/javascript.js"></script>
+	<script type="text/javascript" src="../scripts/main.js"></script>
+</head>
+
+<body>
+	<nav class="navigation">
+		<div class="header">
+			<a href="../index.html" class="logo"><img src="../content/images/meanstack_logo.jpg" class="logo-image"></a>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="../index.html" title="Home">Home</a>
+					</li>
+					<li>
+						<div class="dropdown">
+							<a href="#" class="menu-dropdown" title="Home">MongoDB</a>
+							<div class="dropdown-content">
+							  <a href="#">Link 1</a>
+							  <a href="#">Link 2</a>
+							  <a href="#">Link 3</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Express</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">AngularJS</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Node.js</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main">
+		<div class="container">
+			<h2>3. Managing Collections</h2>
+			<p>In this part we are going to learn the commands for a CRUD (Create, Read, Update, Delete).</p>
+			<p>We are going to use Pokemons are data for our database, as a reference we are using this <a href="http://pokeapi.co/api/v1/" target="_blank"	title="Pokemon API">API</a>.</p>
+			<p>Note that all commands here are being used in a new database called <b>pokemons</b>.</p>
+		</div>
+		<div class="container">
+			<h2>Create</h2>
+			<p>Now using our database <b>pokemons</b> we can create our first one, that will be Pikachu.</p>
+			<textarea class="code-mirror">
+var pokemon = {"name":"Pikachu","description":"Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.","type": "electric", attack: 55, height: 0.4 }
+db.pokemons.insert(pokemon)
+
+Inserted 1 record(s) in 3ms
+WriteResult({
+	"nInserted": 1
+})
+    		</textarea>
+			<p class="image-description">Inserting one element.</p>
+			<p>We can also insert more than one element, for that you can create an array of elements and insert it.</p>
+			<textarea class="code-mirror">
+var pokemons = [{name:"Bulbassauro",description:"Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",type: "grass", attack: 49, height: 0.4 }, 
+               {name:"Charmander",description:"The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",type: "fogo", attack: 52, height: 0.6 }, 
+               {name:"Squirtle",description:"Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",type: "água", attack: 48, height: 0.5 }]
+db.pokemons.insert(pokemons)
+
+Inserted 1 record(s) in 1ms
+BulkWriteResult({
+  "writeErrors": [ ],
+  "writeConcernErrors": [ ],
+  "nInserted": 3,
+  "nUpserted": 0,
+  "nMatched": 0,
+  "nModified": 0,
+  "nRemoved": 0,
+  "upserted": [ ]
+})
+    		</textarea>
+			<p class="image-description">Inserting more than one element.</p>
+			<p></p>
+		</div>
+		
+		<div class="container">
+			<h2>Read</h2>
+			<p>Ok, now we already have four pokemons in our pokemons collection, now we can select all itens in a collection using the command <b>.find()</b>.</p>
+			<textarea class="code-mirror">
+db.pokemons.find()
+
+{
+	"_id" : ObjectId("5771e9612213ac477529cc6a"),
+	"name" : "Pikachu",
+	"description" : "Whenever Pikachu comes across something new, it blastsit with a jolt of electricity. If you come across a blackened berry, it's eviden1ce that this Pokémon mistook the intensity of its charge.",
+	"type" : "electric",
+	"attack" : 55,
+	"height" : 0.4
+}
+{
+	"_id" : ObjectId("5771e98c2213ac477529cc6b"),
+	"name" : "Bulbassauro",
+	"description" : "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
+	"type" : "grass",
+	"attack" : 49,
+	"height" : 0.4
+}
+{
+	"_id" : ObjectId("5771e98c2213ac477529cc6c"),
+	"name" : "Charmander",
+	"description" : "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+	"type" : "fogo",
+	"attack" : 52,
+	"height" : 0.6
+}
+{
+	"_id" : ObjectId("5771e98c2213ac477529cc6d"),
+	"name" : "Squirtle",
+	"description" : "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+	"type" : "água",
+	"attack" : 48,
+	"height" : 0.5
+}
+    		</textarea>
+			<p class="image-description">Selecting a collection.</p>
+			<p>Note that the Id is defined by mongodb, more information about the ObjectId you can find <a href="https://docs.mongodb.com/manual/reference/method/ObjectId" title="ObjectId Documentation" target="_blank">here</a>.</p>
+			<p>If you don not have the mongohacker in your CPU you can user the command <b>.pretty()</b> in the end and then mongodb will return the JSON with line breaks.</p>
+			<p></p>
+			<pre>
+				<code>
+db.pokemons.find().pretty()
+				</code>
+			</pre>
+			<p>What if we want to restrict this query over a condition? We can use the parameters of the find function:</p>
+			<pre>
+				<code>
+db.collection.find(query, fields)
+				</code>
+			</pre>
+			<p>Where <b>query</b> is like our WHERE function in a relational database and the <b>fields</b> are the attributes that we want to return.</p>
+			<textarea class="code-mirror">
+var query = { name: "Pikachu" }
+db.pokemons.find(query)
+{
+        "_id" : ObjectId("5771e9612213ac477529cc6a"),
+        "name" : "Pikachu",
+        "description" : "Whenever Pikachu comes across something new, it blastsit with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.",
+        "type" : "electric",
+        "attack" : 55,
+        "height" : 0.4
+}
+var fields = { name: 1, description: 1 }
+db.pokemons.find(query, fields)
+{
+        "_id" : ObjectId("5771e9612213ac477529cc6a"),
+        "name" : "Pikachu",
+        "description" : "Whenever Pikachu comes across something new, it blastsit with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge."
+}
+    		</textarea>
+			<p>So now we can write something like:</p>
+			<pre>
+				<code>
+var p = db.pokemons.find(query)
+				</code>
+			</pre>
+			<p>And use the variable p Right? <b>NO</b></p>
+			<p>The find command returns a <a href="https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/" target="_blank" title="CURSOR Documentation">CURSOR</a> for the query, in other words, we have a special way to access the data in a CURSOR.</p>
+			<p>To actually have the object we can use the <b>findOne</b> command: </p>
+			<pre>
+				<code>
+var p = db.pokemons.findOne(query)
+				</code>
+			</pre>
+			<p>Now the object will be avaliable in the <b>p</b> variable anytime.</p>
+			<p>If you want to search for a string non case sensitivity we can use the following command after the string in the query:</p>
+			<pre>
+				<code>
+var query = { name: /pikachu/i }
+				</code>
+			</pre>
+	  	</div>
+	  	<div class="container">
+			<h2>Update</h2>
+			<p>There are two ways to update information using mongodb:</p>
+			<ul>
+				<li>save</li>
+				<li>update</li>
+			</ul>
+			<p>The <b>save</b> command insert or update an object, but for update we must get the object first, change it and update it using the command <b>save</b>. For the <b>update</b> command we don't need to get the entire object to change it.</p>
+			<p>The funcion update receives three parameters:</p>
+			<pre>
+				<code>
+db.collection.update(query, mod, options);
+				</code>
+			</pre>
+			<p>First, I will insert a Test pokemon to our collection.</p>
+			<textarea class="code-mirror">
+var poke = {name: "Testemon", attack: 8000, defense: 8000, height: 2.1, description: "Test Pokemon"}
+db.pokemons.save(poke)
+
+Inserted 1 record(s) in 48ms
+WriteResult({
+  "nInserted": 1
+})
+			</textarea>
+			<p>Then I will retrive the id from the database.</p>
+			<textarea class="code-mirror">
+ar query = {name: /testemon/i}
+db.pokemons.find(query)
+{
+  "_id": ObjectId("5771f8392213ac477529cc71"),
+  "name": "Testemon",
+  "attack": 8000,
+  "defense": 8000,
+  "height": 2.1,
+  "description": "Pokemon de teste"
+}
+Fetched 1 record(s) in 1ms
+			</textarea>
+			<p>Now we can try do update our pokemon:</p>
+			<textarea class="code-mirror">
+var query = {"_id": ObjectId("5771f8392213ac477529cc71")}
+var mod = {description: "Description changed"}
+db.pokemons.update(query, mod)
+Updated 1 existing record(s) in 2ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+			</textarea>
+			<p>Let's check how our Test Pokemon is now in our database:</p>
+			<textarea class="code-mirror">
+db.pokemons.find(query)
+{
+        "_id" : ObjectId("5771f8392213ac477529cc71"),
+        "description" : "Description changed"
+}
+			</textarea>
+			<p>Okay my description changed but what about my others attributes? What happened to them?</p>
+			<p>Well, mongodb updated the entire document instead of my attribute description but of course there is a way to only update the attribute description, for that we are going to use the modification operators</p>
+	  	</div>
+	  	<div class="container">
+	  		<p class="next-lesson"><a href="" title="Next: 3. Managing Collections">Next: 3. Managing Collections</a></p>
+	  	</div>
+	</div>
+</body>
+
+<footer>
+	<div>
+		<span>.</span>
+		<p>© Vitor Ubukata - Web Developer</p>
+		<ul class="nav social-media">
+		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="../content/images/email_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://www.linkedin.com/in/vitor-ubukata-89253121" target="_blank" class="linkedin"><img alt="Linkedin" src="../content/images/linkedin_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://github.com/ubukata" target="_blank" class="linkedin"><img alt="GitHub" src="../content/images/github_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://www.facebook.com/vitor.ubukata" target="_blank" class="facebook"><img alt="Facebook" src="../content/images/facebook_logo.png" width="35" height="33"></a></li>
+		  <li><a href="http://www.twitter.com/ubkta" target="_blank" class="twitter"><img alt="Twitter" src="../content/images/twitter_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://plus.google.com/u/0/109164618915536663943" target="_blank" class="google-plus"><img alt="Google Plus" src="../content/images/googleplus_logo.png" width="35" height="34"></a></li>
+		</ul>
+	</div>
+</footer>
+</html>
