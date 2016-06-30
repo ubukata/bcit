@@ -242,8 +242,138 @@ db.pokemons.find(query)
 }
 			</textarea>
 			<p>Okay my description changed but what about my others attributes? What happened to them?</p>
-			<p>Well, mongodb updated the entire document instead of my attribute description but of course there is a way to only update the attribute description, for that we are going to use the modification operators.</p>
+			<p>Well, mongodb updated the entire document instead of my attribute description, to avoid to overwrite your document we are going to use the update operators.</p>
 	  	</div>
+		<div class="container">
+			<h2>Update Operators</h2>
+			<p>There a many update operators avaliable in mongodb, in this section I will list a few of than but you can read more about it <a href="https://docs.mongodb.com/manual/reference/operator/update/" title="Update Operators Documentation" target="_blank">here</a>.</p>
+			<h3>$set</h3>
+			<p>The set operator modify an attribute or create it case it doesn't exists. Using the Pokemon <i>Testmon</i> _id we can update again the values on it.</p>
+			<pre>
+				<code>
+{ $set  : { filed : value } }
+				</code>
+			</pre>
+			<p>Example:</p>
+			<textarea class="code-mirror">
+var query = {"_id": ObjectId("5771f8392213ac477529cc71")}
+var mod = {$set: {name: 'Testemon', attack: 8000, defense: 8000, height: 2.1, description: "Just a test Pokemon"}}
+db.pokemons.update(query, mod)
+
+Updated 1 existing record(s) in 1ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+			</textarea>
+			<p>Now if we find the Testmon again in mongodb it should look like this:</p>
+			<textarea class="code-mirror">
+db.pokemons.find(query)
+{
+  "_id": ObjectId("5771f8392213ac477529cc71"),
+  "description": "Just a test Pokemon",
+  "name": "Testemon",
+  "attack": 8000,
+  "defense": 8000,
+  "height": 2.1
+}
+Fetched 1 record(s) in 1ms
+			</textarea>
+			<h3>$unset</h3>
+			<p>This command is the opposite of the $set. In this case unset will remove the attribute in your document. The syntax is this:</p>
+			<pre>
+				<code>
+{ $unset : { field : 1} }
+				</code>
+			</pre>
+			<p>Example:</p>
+			<textarea class="code-mirror">
+var mod = {$unset: {height: 1}}
+db.pokemons.update(query, mod)
+
+Updated 1 existing record(s) in 3ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+			</textarea>
+			<h3>$push</h3>
+			<p>It will also create or update an attribute that is of type <b>Array</b>. If the attribute exists and it is not an array it will throw an error.</p>
+			<pre>
+				<code>
+{ $push : { filed : value } }
+				</code>
+			</pre>
+			<p>Example:</p>
+			<textarea class="code-mirror">
+var mod = {$push: {moves: 'tackle'}}
+db.pokemons.update(query, mod)
+
+Updated 1 existing record(s) in 2ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+
+db.pokemons.find(query)
+{
+  "_id": ObjectId("5771f8392213ac477529cc71"),
+  "description": "Just a test Pokemon",
+  "name": "Testemon",
+  "attack": 8000,
+  "defense": 8000,
+  "height": 2.1,
+  "moves": [
+    "tackle",
+	"run"
+  ]
+}
+Fetched 1 record(s) in 0ms
+			</textarea>
+			<h3>$pull</h3>
+			<p>This command removes a value from a field if the field is type of Array.</p>
+			<pre>
+				<code>
+{ $pull  : { filed : value } }
+				</code>
+			</pre>
+			<p>Example:</p>
+			<textarea class="code-mirror">
+var mod = {$pull: {moves: 'run'}}
+db.pokemons.update(query, mod)
+
+Updated 1 existing record(s) in 17ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+
+db.pokemons.find(query)
+{
+  "_id": ObjectId("5771f8392213ac477529cc71"),
+  "description": "Just a test Pokemon",
+  "name": "Testemon",
+  "attack": 8000,
+  "defense": 8000,
+  "height": 2.1,
+  "moves": [
+    "tackle"
+  ]
+}
+Fetched 1 record(s) in 0ms
+			</textarea>
+			<h3>$addToSet</h3>
+			<p>Similar to push it will add a value to an existing Array, the difference is that using addToSet the value that you want to insert will not be inserted if exists.</p>
+			<pre>
+				<code>
+{ $addToSet : { filed : value } }
+				</code>
+			</pre>
+		</div>
 	  	<div class="container">
 	  		<p class="next-lesson"><a href="" title="Next: 3. Managing Collections">Next: 3. Managing Collections</a></p>
 	  	</div>
