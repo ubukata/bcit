@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Homework 5</title>
+<script type="text/javascript">
+window.onload = function(){
+	alert("Welcome to the webpage for homework 5 Web Development")
+};
+</script>
+<script type="text/javascript">
+function askName(){
+    var name = prompt("Please enter your name", "");
+    if (name != null) {
+        document.getElementById("result").innerHTML = "<p>Hello " + name + "! Hope everything is ok for you, one more question. How old are you ?</p> <button onclick='askAge()'>Reply</button>";
+    }
+}
+
+function askAge(){
+    var age = prompt("Please enter your age", "");
+    if (age != null) {
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + "<p>So you have " + age + " years old, that is nice!</p>";
+    }
+}
+</script>
+<script type="text/javascript">
+function askColor(){
+    var color = prompt("Please enter your favourite color name", "");
+    if (color != null) {
+        document.fgColor = color;
+    }
+}
+</script>
+</head>
+
+<body>
+
+<p>Click the button to Start</p>
+
+<button onclick="askName()">Start</button>
+
+<div id="result">
+</div>
+
+
+<p>What is your favourite color?</p>
+
+<button onclick="askColor()">Reply</button>
+
+<p id="demo"></p>
+</body>
+
+</html>
