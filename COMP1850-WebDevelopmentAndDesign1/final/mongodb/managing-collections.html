@@ -129,7 +129,6 @@ db.pokemons.find()
 			<p class="image-description">Selecting a collection.</p>
 			<p>Note that the Id is defined by mongodb, more information about the ObjectId you can find <a href="https://docs.mongodb.com/manual/reference/method/ObjectId" title="ObjectId Documentation" target="_blank">here</a>.</p>
 			<p>If you don not have the mongohacker in your CPU you can user the command <b>.pretty()</b> in the end and then mongodb will return the JSON with line breaks.</p>
-			<p></p>
 			<pre>
 				<code>
 db.pokemons.find().pretty()
@@ -375,7 +374,26 @@ Fetched 1 record(s) in 0ms
 			</pre>
 		</div>
 	  	<div class="container">
-	  		<p class="next-lesson"><a href="" title="Next: 3. Managing Collections">Next: 3. Managing Collections</a></p>
+			<h2>Delete (Remove or Drop)</h2>
+			<p>There are two ways to delete information, we can use the commands <b>remove</b> or <b>drop</b>. Both commands will delete data but they have different approaches in how they manage the collection.</p>
+			<h3>drop</h3>
+			<p>The function <b>drop</b> will delete completely the collection, deleting it from the database.</p>
+			<pre>
+				<code>
+db.collection_name.drop()
+				</code>
+			</pre>
+			<h3>remove</h3>
+			<p>The <b>remove</b> function will delete the data in a collection. The collection will still exists in the database when we use remove.</p>
+			<pre>
+				<code>
+var query = {name: \squirtle\i}
+db.pokemons.remove(query)
+				</code>
+			</pre>			
+	  	</div>
+	  	<div class="container">
+	  		<p class="next-lesson"><a href="operators.html" title="Next: 4. Operators">Next: 4. Operators</a></p>
 	  	</div>
 	</div>
 </body>
