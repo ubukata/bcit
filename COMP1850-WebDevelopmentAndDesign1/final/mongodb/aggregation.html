@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MEAN Stack - A basic overview</title>
+	<link rel="stylesheet" href="../content/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<script src="../content/code-mirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="../content/code-mirror/lib/codemirror.css">
+	<script src="../content/code-mirror/mode/javascript/javascript.js"></script>
+	<script type="text/javascript" src="../scripts/main.js"></script>
+</head>
+
+<body>
+	<nav class="navigation">
+		<div class="header">
+			<a href="../index.html" class="logo"><img src="../content/images/meanstack_logo.jpg" class="logo-image"></a>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="../index.html" title="Home">Home</a>
+					</li>
+					<li>
+						<div class="dropdown">
+							<a href="#" class="menu-dropdown" title="Home">MongoDB</a>
+							<div class="dropdown-content">
+							  <a href="#">Link 1</a>
+							  <a href="#">Link 2</a>
+							  <a href="#">Link 3</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Express</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">AngularJS</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Node.js</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main">
+		<div class="container">
+			<h2>6. Aggregation</h2>
+			<p>MongoDB provide us the <a href="https://docs.mongodb.com/manual/core/aggregation-pipeline/" title="Aggregation Framework Documentation">Aggregation Framework</a> to aggregate the data in the database and there are different operators to do that.</p>
+		</div>
+		<div class="container">
+			<h3>Arithmetic Aggregation Operators</h3>
+			<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>Command</th>
+						<th>Description</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>$abs</td>
+						<td>Absolute value</td>
+					</tr>
+					<tr>
+						<td>$add</td>
+						<td>Addition</td>
+					</tr>
+					<tr>
+						<td>$ceil</td>
+						<td>Round down the number</td>
+					</tr>
+					<tr>
+						<td>$floor</td>
+						<td>Round up the number</td>
+					</tr>
+					<tr>
+						<td>$trunc</td>
+						<td>Truncate the number to integer without round</td>
+					</tr>
+				</tbody>
+         	</table>
+			<p>There are much more operators, you can find then <a href="https://docs.mongodb.com/manual/reference/operator/aggregation-arithmetic/" title="Arithmetic Aggregation Operators Documentation">here</a>.</p>
+		</div>
+		<div class="container">
+			<h3>Group Accumulator Operators</h3>
+			<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>Command</th>
+						<th>Description</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>$avg</td>
+						<td>Avarage value</td>
+					</tr>
+					<tr>
+						<td>$min</td>
+						<td>Minimum value</td>
+					</tr>
+					<tr>
+						<td>$max</td>
+						<td>Maximum value</td>
+					</tr>
+					<tr>
+						<td>$stdDevProp</td>
+						<td>Standard deviation</td>
+					</tr>
+				</tbody>
+         	</table>
+			<p>To see more about it you can check it <a href="https://docs.mongodb.com/manual/reference/operator/aggregation-group/" title="Group Accumulator Operators Documentation">here</a>.</p>
+		</div>
+		<div class="container">
+			<h3>String Aggregation Operators</h3>
+			<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>Command</th>
+						<th>Description</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>$substr</td>
+						<td>Substring function</td>
+					</tr>
+					<tr>
+						<td>$toLower</td>
+						<td>Lower case for all string</td>
+					</tr>
+					<tr>
+						<td>$toUpper</td>
+						<td>Upper case for all string</td>
+					</tr>
+					<tr>
+						<td>$strcasecmp</td>
+						<td>Compare strings</td>
+					</tr>
+				</tbody>
+         	</table>
+			<p>Check mongodb documentation <a href="https://docs.mongodb.com/manual/reference/operator/aggregation-string/" title="String Aggregation Operators Documentation">here</a> to leran more about it.</p>
+		</div>
+		<div class="container">
+			<h3>Array Aggregation Operators</h3>
+			<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>Command</th>
+						<th>Description</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>$concatArrays</td>
+						<td>Concat arrays into a new one and return it</td>
+					</tr>
+					<tr>
+						<td>$size</td>
+						<td>Lenght of array</td>
+					</tr>
+					<tr>
+						<td>$toUpper</td>
+						<td>Upper case for all string</td>
+					</tr>
+					<tr>
+						<td>$slice</td>
+						<td>Slice an array removing a part of it</td>
+					</tr>
+				</tbody>
+         	</table>
+			<p>More information <a href="https://docs.mongodb.com/manual/reference/operator/aggregation-array/" title="Array Aggregation Operators Documentation">here</a>.</p>
+		</div>
+		<div class="container">
+			<h3>Date Aggregation Operators</h3>
+			<table class="from-to">
+	    		<thead>
+					<tr>
+						<th>Command</th>
+						<th>Description</th>
+					</tr>
+	    		</thead>
+				<tbody>
+					<tr>
+						<td>$year</td>
+						<td>Returns the year of a date</td>
+					</tr>
+					<tr>
+						<td>$dayOfYear</td>
+						<td>Returns a date between 1 and 366</td>
+					</tr>
+					<tr>
+						<td>$millisecond</td>
+						<td>Returns the milliseconds of a date as a number between 0 and 999.</td>
+					</tr>
+				</tbody>
+         	</table>
+			<p>More operators <a href="https://docs.mongodb.com/manual/reference/operator/aggregation-date/" title="Date Aggregation Operators Documentation">here</a>.</p>
+		</div>
+		<div class="container">
+			<h3>Usage</h3>
+			<p>The sintax for the aggregate function is:</p>
+			<pre>
+				<code>
+					db.collection.aggregate(pipeline, options)
+				</code>
+			</pre>
+			<p>Where the pipeline is:</p>
+			<textarea class="code-mirror">
+[
+	{ $project: <'reshapes each document in the stream'> },
+	{ $match: <'filters the document stream to allow only matching documents to pass'> },
+	{ $redact: <'reshapes each document in the stream by restricting the content for each document based on information stored in the documents themselves'> },
+	{ $limit: <'limit the number of documents that will be considered in the pipeline'> },
+	{ $skip: <'skip the first N documents'> },
+	{ $unwind <'deconstructs an array field from the input documents to output a document'> },
+	{ $group: { _id: <'group key'>, <'fields to group'> },
+	{ $sample: <'randomly selects the specified number of documents from its input'> },
+	{ $sort: <'ordering (1: asc, -1: desc)'> },
+	{ $geoNear: <'search by latitude and longitude'> },
+	{ $lookup: <'similar to a left outer join with another collection in the database'> },
+	{ $out: <'writes the result in a collection'> },
+	{ $indexStats: <'shows if any index was used'> }
+]
+			</textarea>
+			<p>Since it is a pipe line the order of the items in the array make difference, for example you should order the query after you group it. We can also make any combination of it.</p>
+			<p>The options are not mandatory for the aggregate function and its sixtax is:</p>
+			<textarea class="code-mirror">
+{
+	explain: boolean,
+	allowDiskUse: boolean,
+	cursor: boolean,
+	bypassDocumentValidation: boolean,
+	readConcern: boolean
+}
+			</textarea>
+			<p>Example:</p>
+			<textarea class="code-mirror">
+db.collection.aggregate(
+	[ 
+		{ $match: {status: 'Active'} }, 
+		{ $group: { _id: "PokemonId", total: { $sum: "$quantity"}} },
+		{ $sort : { name : 1 } }
+	]
+)
+			</textarea>
+		</div>
+		
+		
+		
+		
+	  	<div class="container">
+	  		<p class="next-lesson"><a href="pagination.html" title="Next: 7. Pagination">Next: 7. Pagination</a></p>
+	  	</div>
+	</div>
+</body>
+
+<footer>
+	<div>
+		<span>.</span>
+		<p>© Vitor Ubukata - Web Developer</p>
+		<ul class="nav social-media">
+		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="../content/images/email_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://www.linkedin.com/in/vitor-ubukata-89253121" target="_blank" class="linkedin"><img alt="Linkedin" src="../content/images/linkedin_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://github.com/ubukata" target="_blank" class="linkedin"><img alt="GitHub" src="../content/images/github_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://www.facebook.com/vitor.ubukata" target="_blank" class="facebook"><img alt="Facebook" src="../content/images/facebook_logo.png" width="35" height="33"></a></li>
+		  <li><a href="http://www.twitter.com/ubkta" target="_blank" class="twitter"><img alt="Twitter" src="../content/images/twitter_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://plus.google.com/u/0/109164618915536663943" target="_blank" class="google-plus"><img alt="Google Plus" src="../content/images/googleplus_logo.png" width="35" height="34"></a></li>
+		</ul>
+	</div>
+</footer>
+</html>
