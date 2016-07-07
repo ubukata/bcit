@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MEAN Stack - A basic overview</title>
+	<link rel="stylesheet" href="../content/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+	<script src="../content/code-mirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="../content/code-mirror/lib/codemirror.css">
+	<script src="../content/code-mirror/mode/javascript/javascript.js"></script>
+	<script type="text/javascript" src="../scripts/main.js"></script>
+</head>
+
+<body>
+	<nav class="navigation">
+		<div class="header">
+			<a href="../index.html" class="logo"><img src="../content/images/meanstack_logo.jpg" class="logo-image"></a>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="../index.html" title="Home">Home</a>
+					</li>
+					<li>
+						<div class="dropdown">
+							<a href="#" class="menu-dropdown" title="Home">MongoDB</a>
+							<div class="dropdown-content">
+							  <a href="#">Link 1</a>
+							  <a href="#">Link 2</a>
+							  <a href="#">Link 3</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Express</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">AngularJS</a>
+					</li>
+					<li>
+						<a href="#" class="menu-dropdown" title="Home">Node.js</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main">
+		<div class="container">
+			<h2>5. Update options</h2>
+			<p>When we were learning about Update we had some options in that function.</p>
+			<pre>
+				<code>
+db.collection.update(query, mod, options);
+				</code>
+			</pre>
+			<p>Where options is:</p>
+			<textarea class="code-mirror">
+{
+	upsert: boolean,
+	multi: boolean,
+	writeConcern: document
+}
+			</textarea>
+		</div>
+		<div class="container">
+			<h3>Upsert</h3>
+			<p>When we set upsert for true, we are saying to MongoDB to insert the document in case it doesn't exists. The default value is false.</p>
+			<p>For example:</p>
+			<textarea class="code-mirror">
+var query = {name: /Pokemon123/i}
+var mod = {$set: {active: true}}
+var options = {upsert: true}
+db.pokemons.update(query, mod, options)
+
+Updated 1 new record(s) in 3ms
+WriteResult({
+  "nMatched": 0,
+  "nUpserted": 1,
+  "nModified": 0,
+  "_id": ObjectId("564a94aa3888e5da82899ccc")
+})
+			</textarea>
+			<p>Now we can see that the WriteResult on "nMatched" was 0 so it didn't find any records for that name and it was inserted like we can see in the "nUpserted" and it also returned the _id for the inserted document.</p>
+		</div>
+		<div class="container">
+			<h3>$setOnInsert</h3>
+			<p>With this operator we can define values which will be insertert when a upsert occurs.</p>
+			<textarea class="code-mirror">
+var query = {name: /WhatUpMom/i}
+var mod = {
+  $set: {active: true},
+  $setOnInsert: {name: "WhatUpMom", attack: null, defense: null, height: null, description: "???"}
+}
+
+var options = {upsert: true}
+db.pokemons.update(query, mod, options)
+
+Updated 1 new record(s) in 90ms
+WriteResult({
+  "nMatched": 0,
+  "nUpserted": 1,
+  "nModified": 0,
+  "_id": ObjectId("564a89f33888e5da82899ccb")
+})
+
+
+db.pokemons.find(query)
+{
+  "_id": ObjectId("564a89f33888e5da82899ccb"),
+  "active": true,
+  "name": "WhatUpMom",
+  "attack": null,
+  "defense": null,
+  "height": null,
+  "description": "???"
+}
+		</textarea>
+		</div>
+		<div class="container">
+			<h3>multi</h3>
+			<p>The default of MongoDB is to not update more than one document at time. The <b>multi</b> allows us to update more than a document we just need to set his value for true.</p>
+			<textarea class="code-mirror">
+var query = {}
+var mod = {$set: {active: false}}
+var options = {multi: true}
+db.pokemons.update(query, mod, options)
+
+Updated 8 existing record(s) in 3ms
+WriteResult({
+  "nMatched": 8,
+  "nUpserted": 0,
+  "nModified": 8
+})
+			</textarea>
+		</div>
+		<div class="container">
+			<h3>writeConcern</h3>
+			<p>The writeConcern allows us to confgure what time of concern MongoDB will use in case of successed insert.</p>
+			<p>When insert, update and delete has a weak write concern those operations returns very fast, in the other hand in case of error, those operations may be not persisted into the database.</p>
+			<p>When it is a strong write concern, the client wait for the mongodb thread to confirm the success.</p>
+			<p>You can learn more about it <a href="https://docs.mongodb.com/manual/reference/write-concern/" title="Write Concern Documentation">here</a>.</p>
+		</div>
+		
+	  	<div class="container">
+	  		<p class="next-lesson"><a href="" title="Next: 3. Managing Collections">Next: 4. Operators</a></p>
+	  	</div>
+	</div>
+</body>
+
+<footer>
+	<div>
+		<span>.</span>
+		<p>© Vitor Ubukata - Web Developer</p>
+		<ul class="nav social-media">
+		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="../content/images/email_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://www.linkedin.com/in/vitor-ubukata-89253121" target="_blank" class="linkedin"><img alt="Linkedin" src="../content/images/linkedin_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://github.com/ubukata" target="_blank" class="linkedin"><img alt="GitHub" src="../content/images/github_logo.png" width="35" height="33"></a></li>
+		  <li><a href="https://www.facebook.com/vitor.ubukata" target="_blank" class="facebook"><img alt="Facebook" src="../content/images/facebook_logo.png" width="35" height="33"></a></li>
+		  <li><a href="http://www.twitter.com/ubkta" target="_blank" class="twitter"><img alt="Twitter" src="../content/images/twitter_logo.png" width="35" height="34"></a></li>
+		  <li><a href="https://plus.google.com/u/0/109164618915536663943" target="_blank" class="google-plus"><img alt="Google Plus" src="../content/images/googleplus_logo.png" width="35" height="34"></a></li>
+		</ul>
+	</div>
+</footer>
+</html>
