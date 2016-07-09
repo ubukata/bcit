@@ -18,10 +18,11 @@ footer {
     background-color: #333;
     color: white;
     width: 100%;
-    position: absolute;
-    height: 80px;
+    position: fixed;
+    height: 57px;
     bottom: 0;
     clear: both;
+    z-index: 99999;
 }
 
 footer span {
