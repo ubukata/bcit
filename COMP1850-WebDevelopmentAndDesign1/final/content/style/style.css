@@ -29,7 +29,14 @@ footer span {
     display: block;
     width: 33%;
     float: left;
-    color: #333;
+    text-align: center;
+}
+
+footer p a {
+    float: right;
+    color: white;
+    text-decoration: none;
+    margin-right: 20%;
 }
 
 footer p {

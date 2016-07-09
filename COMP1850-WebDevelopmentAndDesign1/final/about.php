@@ -147,7 +147,7 @@
 </body>
 <footer>
 	<div>
-		<span>.</span>
+		<p><a href="site-map.html">Site Map</a></p>
 		<p>© Vitor Ubukata - Web Developer</p>
 		<ul class="nav social-media">
 		  <li><a href="mailto:vitor.ubukata@gmail.com" target="_blank" class="email"><img alt="Email" src="content/images/email_logo.png" width="35" height="34"></a></li>
