@@ -13,6 +13,17 @@ window.onload = function(e) {
 			        readOnly: true
 				}));
 			}
+
+
+			textAreas = document.getElementsByClassName("code-mirror-html");
+			for (i = textAreas.length - 1; i >= 0; i--) {
+				coreMirrorInstances.push(CodeMirror.fromTextArea(textAreas[i], {
+				    mode: {name: "htmlmixed"},
+			        theme: "default",
+			        lineNumbers: true,
+			        readOnly: true
+				}));
+			}
 		}
 	};
 

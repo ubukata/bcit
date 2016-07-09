@@ -75,127 +75,71 @@
 
 	<div class="main">
 		<div class="container">
-			<h2>2. Initial Commands</h2>
-			<p>In this part we are going to learn some basics commands that involves mongodb server, using the cmd.</p>
-			<p>First, you start your server using <b>mongod</b> and another cmd for <b>mongo</b>.</p>
+			<h2>3. HTTP Protocol</h2>
+			<p>The HTTP or Hypertext Transfer Protocol module is the most important for us since we are developing a node.js web server and its work with many functionalities of the HTTP protocol. It is also a native module, in other words, we do not need to install anything to use it.</p>
+			<p>To use it in node.js we just need a simple line of code:</p>
+			<pre>
+				<code>
+					require(‘http’)
+				</code>
+			</pre>
+			<p>For each HTTP request the header of the request contains many information about it like the verb. When the serve receives it and process it the server respond with HTTP Status Code.</p>
 		</div>
 		<div class="container">
-			<h2>Database</h2>
-			<p>Next we can create a new database or switch to one using the command <b>use</b>.</p>
+			<h2>HTTP Methods/Verbs</h2>
+			<p>There are many verbs that a client can use to send a request. The most commons ones are: GET, POST, PUT, DELETE, HEAD, TRACE, OPTIONS and much more.</p>
+			<h3>GET</h3>
+			<p>The GET method requests a representation of the specified resource. Requests using GET should only retrieve data and should have no other effect. A get request can return XML or JSON for example.</p>
+			<p>Here is one example of a GET HTTP request:</p>
 			<pre>
 				<code>
-use my-new-database
-switched to db my-new-database
+					GET / HTTP/1.1
+					Host: google.com
+					Connection: close
+					User-Agent: Chrome/46.0.2490.86
+					Accept-Encoding: gzip
+					Accept-Charset: ISO-8859-1,UTF-8;q=0.7,*;q=0.7
+					Cache-Control: no
+					Accept-Language: de,en;q=0.7,en-us;q=0.3
 				</code>
 			</pre>
-			<p>Another way to already connect in a database instance instead if the test instance you can use the command <b>mongo</b> followed by the <b>database name</b>.</p>
-			<pre>
-				<code>
-mongo my-database-name
-connecting to: my-database-name
-				</code>
-			</pre>
-			<p>If you want to check which database your are now you can use the command <b>db</b> and it will return the name of the current database.</p>
-			<pre>
-				<code>
-db
-my-new-database
-				</code>
-			</pre>
-			<p>The command <b>show dbs</b> will list all databases available in your mongodb server.</p>
-			<pre>
-				<code>
-show dbs
-local  0.078GB
-				</code>
-			</pre>
-			<h2>Drop database</h2>
-			<p>To drop a database we just execute the command dropDatabase() from db object.</p>
-			<pre>
-				<code>
-use bank_to_remove
-switched to db bank_to_remove
-
-db.dropDatabase()
-
-{
-  "dropped": "bank_to_remove",
-  "ok": 1
-}
-				</code>
-			</pre>
+			<h3>POST</h3>
+			<p>The POST method requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI. The data POSTed might be, for example, an annotation for existing resources; a message for a bulletin board, newsgroup, mailing list, or comment thread; a block of data that is the result of submitting a web form to a data-handling process; or an item to add to a database.</p>
+			<h3>PUT</h3>
+			<p>The PUT method requests that the enclosed entity be stored under the supplied URI. If the URI refers to an already existing resource, it is modified; if the URI does not point to an existing resource, then the server can create the resource with that URI.</p>
+			<h3>DELETE</h3>
+			<p>The DELETE method deletes the specified resource according to the URI.</p>
 		</div>
 		<div class="container">
-			<h2>Collections</h2>
-			<p>To list all collections available in your database you can use the command <b>show collections</b>.</p>
+			<h2>HTTP Status Codes</h2>
+			<p>The return codes of the HTTP are composed by 3 digits which follow a pattern to better understanding of the return.</p>
+			<h3>1XX - Informational</h3>
+			<p>They are use to inform that Request was received and continuing process.</p>
+			<h3>2XX - Success</h3>
+			<p>Means that the request was received with success. For example, when web pages are finishes to load the server responds with a 200 status code - OK.</p>
 			<pre>
 				<code>
-C:\>mongo MyApp
-MongoDB shell version: 3.2.7
-connecting to: MyApp
-Mongo-Hacker 0.0.13
-(mongod-3.2.7) MyApp> show collections
-restaurants → 10.138MB / 4.457MB
+					HTTP/1.1 200 OK
+					Connection: keep-alive
+					Content-Encoding: gzip
+					Content-Type: text/html
+					Date: Sun, 06 Dec 2015 01:07:17 GMT
+					ETag: W/"55f9df1c-23f"
+					Last-Modified: Wed, 16 Sep 2015 21:29:00 GMT
+					Server: nginx
+					Transfer-Encoding: chunked
 				</code>
 			</pre>
-			<p>If you would like to create a new empty collection you must use the command <b>db.createCollection(“name”)</b>.</p>
-			<pre>
-				<code>
-(mongod-3.2.7) MyApp> db.createCollection("new_collection")
-{
-  "ok": 1
-}
-(mongod-3.2.7) MyApp> show collections
-new_collection    →  0.000MB / 0.004MB
-restaurants       → 10.138MB / 4.457MB
-				</code>
-			</pre>
-			<p>More information about it you can consult <a href="https://docs.mongodb.com/manual/reference/method/db.createCollection" target="_blank" title="MongoDB Documentation">here</a>.<p>
-			<p>Also the first time a new item is inserted in a collection that doesn’t exists the collection will also be created.</p>
-			<pre>
-				<code>
-(mongod-3.2.7) MyApp> var json = {test: true}
-(mongod-3.2.7) MyApp> db.test.insert(json)
-Inserted 1 record(s) in 12ms
-WriteResult({
-  "nInserted": 1
-})
-(mongod-3.2.7) MyApp> db.test.insert(json)
-Inserted 1 record(s) in 1ms
-WriteResult({
-  "nInserted": 1
-})
-(mongod-3.2.7) MyApp> show collections
-new_collection    →  0.000MB / 0.004MB
-restaurants       → 10.138MB / 4.457MB
-test              →  0.000MB / 0.016MB
-				</code>
-			</pre>
-			<p>The first insertion will take a little bit longer than the next ones, in the example above the first one took 12ms and the next one 1ms. This happens because for the first insertion MongoDB will pre allocate the necessary space on disk for the new collection.</p>
-		</div>
-		<div class="container">
-			<h2>Import and Export</h2>
-			<p>To import data from a file to a new collection we can use the command <b>mongoimport</b>.</p>
-			<pre>
-				<code>
-mongoimport --db database --collection collection --drop --file data.json
-				</code>
-			</pre>
-			<img src="../content/images/mongodb/mongoimport.png" Title="mongoimport usage">
-			<p class="image-description">mongoimport usage.</p>
-			<p>To export data from a collection to a new file we can use the command <b>mongoexport</b>.</p>
-			<pre>
-				<code>
-mongoexport --db data_base_name --collection collection_name --out my_collection.json
-				</code>
-			</pre>
-		</div>
-		<div class="container">
-			<h2>MongoDB Documentation</h2>
-			<p>You can find more information about the commands <a href="https://docs.mongodb.com/manual/reference/method/db.createCollection/" target="_blank" title="MongoDB Documentation">here</a>.</p>
+			<h3>3XX - Redirect</h3>
+			<p>With this code we can warn directly the HTTP header to redirect saving the JavaScript to do that for example.</p>
+			<h3>4XX - Client Error</h3>
+			<p>The 4xx class of status code is intended for situations in which the client seems to have erred. For example, the code 401 an Unauthorized status code, in order words, the user probably is not authenticated. The 404 is another common status code for Not Found.</p>
+			<h3>5XX - Server Error</h3>
+			<p>The server failed to fulfill an apparently valid request. The 500 is used for Internal Server Error and it is a generic error message, given when an unexpected condition was encountered and no more specific message is suitable.</p>
+			<p>You can find a list of all HTTP status codes <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" title="HTTP Status Codes List" target="_blank">here</a>.</p>
 		</div>
 	  	<div class="container">
-	  		<p class="next-lesson"><a href="managing-collections.html" title="Next: 3. Managing Collections">Next: 3. Managing Collections</a></p>
+	  		<p class="next-lesson"><a href="web-server.html" title="Next: 4. Creating the Web Server">Next: 4. Creating the Web Server</a></p>
 	  	</div>
 	</div>
 </body>

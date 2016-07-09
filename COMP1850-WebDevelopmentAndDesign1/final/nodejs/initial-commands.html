@@ -8,7 +8,6 @@
 	<script src="../content/code-mirror/lib/codemirror.js"></script>
 	<link rel="stylesheet" href="../content/code-mirror/lib/codemirror.css">
 	<script src="../content/code-mirror/mode/javascript/javascript.js"></script>
-	<script type="text/javascript" src="../scripts/main.js"></script>
 </head>
 
 <body>
@@ -76,103 +75,21 @@
 
 	<div class="main">
 		<div class="container">
-			<h2>5. Update options</h2>
-			<p>When we were learning about Update we had some options in that function.</p>
+			<h2>2. Initial Commands</h2>
+			<p>First, we need to learn the command to execute the node.js.</p>
+			<p>We need to use the cmd or another one like Git Bash to execute it, for that we can use the command <b>node</b>.</p>
+			<p>After node.js is running you can test it using the command: </p>
 			<pre>
 				<code>
-db.collection.update(query, mod, options);
+					console.log("Hello World")
 				</code>
 			</pre>
-			<p>Where options is:</p>
-			<textarea class="code-mirror">
-{
-	upsert: boolean,
-	multi: boolean,
-	writeConcern: document
-}
-			</textarea>
+		  	<img src="../content/images/nodejs/node-cmd-1.png" title="Installing Node.js - Windows">
+	  		<p class="image-description">Example of node usage</p>
+	  		<p>In this tutorial we are going to learn how to use node.js and not JavaScript, so I am counting that you know some JavaScript code.</p>
 		</div>
-		<div class="container">
-			<h3>Upsert</h3>
-			<p>When we set upsert for true, we are saying to MongoDB to insert the document in case it doesn't exists. The default value is false.</p>
-			<p>For example:</p>
-			<textarea class="code-mirror">
-var query = {name: /Pokemon123/i}
-var mod = {$set: {active: true}}
-var options = {upsert: true}
-db.pokemons.update(query, mod, options)
-
-Updated 1 new record(s) in 3ms
-WriteResult({
-  "nMatched": 0,
-  "nUpserted": 1,
-  "nModified": 0,
-  "_id": ObjectId("564a94aa3888e5da82899ccc")
-})
-			</textarea>
-			<p>Now we can see that the WriteResult on "nMatched" was 0 so it didn't find any records for that name and it was inserted like we can see in the "nUpserted" and it also returned the _id for the inserted document.</p>
-		</div>
-		<div class="container">
-			<h3>$setOnInsert</h3>
-			<p>With this operator we can define values which will be insertert when a upsert occurs.</p>
-			<textarea class="code-mirror">
-var query = {name: /WhatUpMom/i}
-var mod = {
-  $set: {active: true},
-  $setOnInsert: {name: "WhatUpMom", attack: null, defense: null, height: null, description: "???"}
-}
-
-var options = {upsert: true}
-db.pokemons.update(query, mod, options)
-
-Updated 1 new record(s) in 90ms
-WriteResult({
-  "nMatched": 0,
-  "nUpserted": 1,
-  "nModified": 0,
-  "_id": ObjectId("564a89f33888e5da82899ccb")
-})
-
-
-db.pokemons.find(query)
-{
-  "_id": ObjectId("564a89f33888e5da82899ccb"),
-  "active": true,
-  "name": "WhatUpMom",
-  "attack": null,
-  "defense": null,
-  "height": null,
-  "description": "???"
-}
-		</textarea>
-		</div>
-		<div class="container">
-			<h3>multi</h3>
-			<p>The default of MongoDB is to not update more than one document at time. The <b>multi</b> allows us to update more than a document we just need to set his value for true.</p>
-			<textarea class="code-mirror">
-var query = {}
-var mod = {$set: {active: false}}
-var options = {multi: true}
-db.pokemons.update(query, mod, options)
-
-Updated 8 existing record(s) in 3ms
-WriteResult({
-  "nMatched": 8,
-  "nUpserted": 0,
-  "nModified": 8
-})
-			</textarea>
-		</div>
-		<div class="container">
-			<h3>writeConcern</h3>
-			<p>The writeConcern allows us to confgure what time of concern MongoDB will use in case of successed insert.</p>
-			<p>When insert, update and delete has a weak write concern those operations returns very fast, in the other hand in case of error, those operations may be not persisted into the database.</p>
-			<p>When it is a strong write concern, the client wait for the mongodb thread to confirm the success.</p>
-			<p>You can learn more about it <a href="https://docs.mongodb.com/manual/reference/write-concern/" title="Write Concern Documentation">here</a>.</p>
-		</div>
-		
 	  	<div class="container">
-	  		<p class="next-lesson"><a href="aggregation.html" title="Next: 6. Aggregation">Next: 6. Aggregation</a></p>
+	  		<p class="next-lesson"><a href="http-protocol.html" title="Next: 3. HTTP protocol">Next: 3. HTTP protocol</a></p>
 	  	</div>
 	</div>
 </body>

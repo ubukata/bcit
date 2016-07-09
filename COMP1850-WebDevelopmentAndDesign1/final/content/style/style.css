@@ -5,13 +5,23 @@ body,html {
     font-family: 'Ubuntu', serif;
 }
 
+body {
+    position: relative;
+    height: 100%;
+}
+
+a { 
+    color: #18293C;
+} 
+
 footer {
     background-color: #333;
     color: white;
     width: 100%;
-    position: relative;
+    position: absolute;
     height: 80px;
     bottom: 0;
+    clear: both;
 }
 
 footer span {
@@ -81,6 +91,7 @@ ul.social-media li {
 
 .main {
 	margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .menu > ul{
@@ -125,6 +136,16 @@ ul.social-media li {
     margin-right: auto;
     margin-left: auto;
     margin-top: 40px;
+}
+
+.container > h1 {
+    text-shadow: 1px 1px 1px #555;
+    font-size: 3em;
+    text-align: left;
+}
+
+h1,h2,h3,h4,th,b {
+    color: #18293C;
 }
 
 .header {
@@ -261,4 +282,93 @@ table.from-to {
     text-align: left;
     vertical-align: top;
     border: 1px solid #ddd;
+}
+
+
+form > input[type=text], textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form > input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.site-map {
+    width: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    min-height: 780px;
+    position: relative;
+}
+
+.site-map-item {
+    width: 48%;
+    min-height: 400px;
+    margin: 0 0 0 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: #18293C;
+}
+
+.site-map-item > h2 {
+    padding-left: 25px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.site-map-item > p {
+    padding-left: 40px;
+    color: white;
+}
+
+.site-map-item > h2 {
+    border-bottom: 2px solid #dedede;
+}
+
+.site-map-item > ul {
+    list-style: none;
+    margin-top: -10px;
+}
+
+.site-map-item > ul > li {
+    padding-bottom: 20px;
+}
+
+.site-map-item > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.height-min {
+    min-height: 180px;
+}
+
+.attention {
+    color: red;
+    font-size: 20px;
 }

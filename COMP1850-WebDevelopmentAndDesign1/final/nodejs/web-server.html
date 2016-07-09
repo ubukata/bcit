@@ -76,104 +76,82 @@
 
 	<div class="main">
 		<div class="container">
-			<h2>5. Update options</h2>
-			<p>When we were learning about Update we had some options in that function.</p>
+			<h2>4. Creating the Web Server</h2>
+			<p>To initialize an HTTP server we will use the function <b>createServer</b> which receives two parameters, the first one is the <b>request</b> and the second one is the <b>response</b>.</p>
+			<textarea class="code-mirror">
+var http = require('http');
+
+http.createServer(function(request, response){
+	response.writeHead(200, {"Content-Type": "text/plain"});
+	response.write("Hello World");
+	response.end();
+}).listen(3000, function(){
+	console.log('Server running on localhost:3000');
+});
+			</textarea>
+			<p class="image-description">Initiating a HTTP server (1).</p>
+			<p>Or:</p>
+			<textarea class="code-mirror">
+var http = require('http');
+
+var server = http.createServer(function(request, response){
+	response.writeHead(200, {"Content-Type": "text/plain"});
+	response.write("Hello World");
+	response.end();
+});
+
+server.listen(3000, function(){
+	console.log('Server running on localhost:3000');
+});
+			</textarea>
+			<p class="image-description">Initiating a HTTP server (2).</p>
+			<p>There is no difference between both ways shown above.</p>
+			<p>Since we are working with a Web Server, we can return a HTML instead of a text. To do it we can change:</p>
 			<pre>
 				<code>
-db.collection.update(query, mod, options);
+					response.writeHead(200, {"Content-Type": "text/plain"});
+					response.write("Hello World");
 				</code>
 			</pre>
-			<p>Where options is:</p>
-			<textarea class="code-mirror">
-{
-	upsert: boolean,
-	multi: boolean,
-	writeConcern: document
-}
+			<p>To:</p>
+			<pre>
+				<code>
+					response.writeHead(200, {"Content-Type": "text/html"});
+					response.write("&lt;h1&gt;Hello World&lt;/h1&gt;");
+				</code>
+			</pre>
+			<p>Ok done! We just learned how to send a HTML response. Now we can send a existing html as response.</p>
+		</div>
+		<div class="container">
+			<h3>Returning an existing HTML</h3>
+			<p>First we need to create a HTML, let's call that index.html</p>
+			<textarea class="code-mirror-html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+</head>
+<body>
+	<h1>Hello World</h1>
+</body>
+</html>
 			</textarea>
-		</div>
-		<div class="container">
-			<h3>Upsert</h3>
-			<p>When we set upsert for true, we are saying to MongoDB to insert the document in case it doesn't exists. The default value is false.</p>
-			<p>For example:</p>
+			<p>Now we can create the JavaScript to return this HTML.</p>
 			<textarea class="code-mirror">
-var query = {name: /Pokemon123/i}
-var mod = {$set: {active: true}}
-var options = {upsert: true}
-db.pokemons.update(query, mod, options)
+var http = require('http')
+  , fs = require('fs')
+  , index = fs.readFileSync('index.html');
 
-Updated 1 new record(s) in 3ms
-WriteResult({
-  "nMatched": 0,
-  "nUpserted": 1,
-  "nModified": 0,
-  "_id": ObjectId("564a94aa3888e5da82899ccc")
-})
+http.createServer(function(request, response){
+	response.writeHead(200, {"Content-Type": "text/html"});
+	response.end(index);
+}).listen(3000, function(){
+	console.log('Server running on localhost:3000');
+});
 			</textarea>
-			<p>Now we can see that the WriteResult on "nMatched" was 0 so it didn't find any records for that name and it was inserted like we can see in the "nUpserted" and it also returned the _id for the inserted document.</p>
+			<p>In this example we read the HTML file with the <b>fs.readFileSync</b> and returns it in the response.</p>
 		</div>
-		<div class="container">
-			<h3>$setOnInsert</h3>
-			<p>With this operator we can define values which will be insertert when a upsert occurs.</p>
-			<textarea class="code-mirror">
-var query = {name: /WhatUpMom/i}
-var mod = {
-  $set: {active: true},
-  $setOnInsert: {name: "WhatUpMom", attack: null, defense: null, height: null, description: "???"}
-}
-
-var options = {upsert: true}
-db.pokemons.update(query, mod, options)
-
-Updated 1 new record(s) in 90ms
-WriteResult({
-  "nMatched": 0,
-  "nUpserted": 1,
-  "nModified": 0,
-  "_id": ObjectId("564a89f33888e5da82899ccb")
-})
-
-
-db.pokemons.find(query)
-{
-  "_id": ObjectId("564a89f33888e5da82899ccb"),
-  "active": true,
-  "name": "WhatUpMom",
-  "attack": null,
-  "defense": null,
-  "height": null,
-  "description": "???"
-}
-		</textarea>
-		</div>
-		<div class="container">
-			<h3>multi</h3>
-			<p>The default of MongoDB is to not update more than one document at time. The <b>multi</b> allows us to update more than a document we just need to set his value for true.</p>
-			<textarea class="code-mirror">
-var query = {}
-var mod = {$set: {active: false}}
-var options = {multi: true}
-db.pokemons.update(query, mod, options)
-
-Updated 8 existing record(s) in 3ms
-WriteResult({
-  "nMatched": 8,
-  "nUpserted": 0,
-  "nModified": 8
-})
-			</textarea>
-		</div>
-		<div class="container">
-			<h3>writeConcern</h3>
-			<p>The writeConcern allows us to confgure what time of concern MongoDB will use in case of successed insert.</p>
-			<p>When insert, update and delete has a weak write concern those operations returns very fast, in the other hand in case of error, those operations may be not persisted into the database.</p>
-			<p>When it is a strong write concern, the client wait for the mongodb thread to confirm the success.</p>
-			<p>You can learn more about it <a href="https://docs.mongodb.com/manual/reference/write-concern/" title="Write Concern Documentation">here</a>.</p>
-		</div>
-		
-	  	<div class="container">
-	  		<p class="next-lesson"><a href="aggregation.html" title="Next: 6. Aggregation">Next: 6. Aggregation</a></p>
-	  	</div>
 	</div>
 </body>
 
