@@ -1,0 +1,54 @@
+body{ margin:0 auto; }
+
+.content {
+	width: 800px;
+	margin: 5% auto;
+}
+
+.logo {
+	height: 55px;
+}
+
+h1 {
+	display: inline;
+	height: 80%;
+	margin-top: 0;
+	font-size: 85px;
+}
+
+.menu-item {
+	float: right;
+	margin: 40px 0 0 10px;
+}
+
+.right {
+	float: right;
+}
+
+span {
+	font-size: 25px;
+	margin-left: 10px;
+}
+
+.date{
+	color: green;
+	font-size: 40px;
+}
+
+.filter {
+	display: block;
+	min-height: 50px;
+}
+
+.sorting {        
+	margin-top: 2%;
+    margin-right: -13%;
+}
+
+table {
+	width: 100%;
+}
+
+td > img {
+	height:60px;
+}

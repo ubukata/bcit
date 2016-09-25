@@ -1,0 +1,39 @@
+﻿
+<span class="right"><b>F </b><input type="radio" value="F" ng-model="temperatureType" ng-change="changeTemperatureScale('F')" /></span>
+<span class="right"><b>C </b><input type="radio" value="C" ng-model="temperatureType" ng-change="changeTemperatureScale('C')" /></span>
+<br/>
+<div class="filter">
+	<span class="date">{{actualDate}}</span>
+
+	<div class="right sorting">
+		View by:
+		<select ng-model="sortType">
+			<option value="cityName">City</option>
+			<option value="high">High</option>
+			<option value="low">Low</option>
+		</select>
+	</div>
+</div>
+
+<table>
+	<thead>
+		<td colspan="3"></td>
+		<td><b>High</b></td>
+		<td><b>Low</b></td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="fc in forecast | orderBy:sortType">
+			<td><b>{{fc.cityName}}</b></td>
+			<td>
+				<img src="images/clear.png" ng-if="fc.text == 'Clear'" />
+				<img src="images/partly-cloudy.png" ng-if="fc.text == 'Partly Cloudy'" />
+				<img src="images/showers.png" ng-if="fc.text == 'Showers'" />
+			</td>
+			<td>
+				{{fc.text}}
+			</td>
+			<td>{{fc.high}}</td>
+			<td>{{fc.low}}</td>
+		</tr>
+	</tbody>
+</table>
