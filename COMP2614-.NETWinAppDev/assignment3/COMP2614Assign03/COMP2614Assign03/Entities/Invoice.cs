@@ -7,6 +7,7 @@ namespace COMP2614Assign03.Entities
     /// <summary>
     /// Represents an invoice, only created using a file data.
     /// </summary>
+    /// Protected set to prevent the manipulation of it.
     public class Invoice
     {
         public int Number { get; protected set; }
@@ -60,6 +61,10 @@ namespace COMP2614Assign03.Entities
             Items = new List<InvoiceItem>();
         }
 
+        /// <summary>
+        /// Initialize the Invoice with the file data.
+        /// </summary>
+        /// <param name="data">String with the format: InvoiceNumber:InvoiceDate:Terms</param>
         public Invoice(string[] data) : this()
         {
             Number = Convert.ToInt32(data[0]);

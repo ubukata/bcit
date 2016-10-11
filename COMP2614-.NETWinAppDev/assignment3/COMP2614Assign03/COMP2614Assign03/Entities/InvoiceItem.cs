@@ -5,6 +5,7 @@ namespace COMP2614Assign03.Entities
     /// <summary>
     /// Represents an invoice item, only created using a file data.
     /// </summary>
+    /// Protected set to prevent the manipulation of it.
     public class InvoiceItem
     {
         public int Quantity { get; protected set; }
@@ -39,6 +40,10 @@ namespace COMP2614Assign03.Entities
 
         }
 
+        /// <summary>
+        /// Initialize the Invoice Item with the file data.
+        /// </summary>
+        /// <param name="data">String with the format: Quantity:Sku:Description:Price:Taxable</param>
         public InvoiceItem(string[] data) : this()
         {
             Quantity = Convert.ToInt32(data[0]);

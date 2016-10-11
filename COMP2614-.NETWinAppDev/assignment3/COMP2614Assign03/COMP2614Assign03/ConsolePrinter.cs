@@ -10,6 +10,10 @@ namespace COMP2614Assign03
     /// </summary>
     public class ConsolePrinter
     {
+        /// <summary>
+        /// Print all invoices with header to the console.
+        /// </summary>
+        /// <param name="invoices">List of invoices.</param>
         public static void PrintInvoices(IEnumerable<Invoice> invoices)
         {
             Console.WriteLine("Invoice Listing");
@@ -28,6 +32,10 @@ namespace COMP2614Assign03
 
         }
 
+        /// <summary>
+        /// Print a single invoice information to the console.
+        /// </summary>
+        /// <param name="invoice">Invoice</param>
         public static void PrintInvoice(Invoice invoice)
         {
             Console.WriteLine($"{"Invoice Number:",-15} {invoice.Number}");
