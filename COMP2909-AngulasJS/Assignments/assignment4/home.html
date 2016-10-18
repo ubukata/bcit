@@ -1,0 +1,8 @@
+<table>
+    <tbody>
+        <tr *ngFor='let food of foods'>
+            <td><a routerLink="/food/{{food.id}}" routerLinkActive="active">{{food.id}}</a></td>
+            <td>{{food.name}}</td>
+        </tr>
+    </tbody>
+</table>

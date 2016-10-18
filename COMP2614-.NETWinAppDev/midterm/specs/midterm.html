@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <title> COMP2614 - Midterm - Open Book </title>
+  <style type="text/css">
+  body
+  {
+	margin: 8;
+	font-family: Trebuchet MS;
+	font-size: 13pt;
+  }
+
+  .redHigh
+  {
+	 color: #ff6666;
+  }
+
+  h2
+  {
+	 color: #5066cc;
+  }
+
+  h3
+  {
+	 color: #5066cc;
+  }
+  </style>
+  
+ </head>
+ <body>
+<h2>COMP2614 Midterm Exam Project Instructions <span class="redHigh">(30 marks)</span></h2>
+<p>For this Midterm exam you may use:</p>
+<ul>
+<li>lecture notes and examples</li>
+<li>your own notes, labs, and assignments</li>
+<li>any textbook(s)</li>
+<li>the Internet</li>
+</ul>
+<p>You may not use:</p>
+<ul>
+<li>any form of communication with anyone else (except your instructor)</li>
+<li>others' notes, labs, assignments, or other work</li>
+</ul>
+<h3>Screen Shot Sample</h3>
+<p><img border="0" alt="Screen Shot Sample" src="midterm.png" width="900" height="550" /></p>
+<h3>Requirements</h3>
+<p>To receive full marks you must follow these requirements:</p>
+<ol>
+<li>Name your project <b>COMP2614Midterm</b><br /><br /></li>
+<li>Define a class named GroceryItem in a separate source file<br /><br /></li>
+<li>Implement the following public property methods in class GroceryItem: (use appropriate datatypes) <br /><br />Description (read-only) <br />Price (read-write) <br />ExpirationDate (read-only)<br /><br />
+Include the necessary code to support sorting by Price descending<br/><br />
+Declare class GroceryItem's ExpirationDate as a DateTime type<br /><br />
+<li>Define a class named GroceryItemCollection (derived from List&lt;GroceryItem&gt;) in a separate source file<br /><br />
+</li>
+<li>Implement the following calculated property method in class GroceryItemCollection:<br /><br />TotalPrice<br /><br />
+<li>Create the four GroceryItem objects that you see listed in the screenshot above and add them to the GroceryItemCollection when the program begins
+<br /><br /><b>Hint:</b> To specify a DateTime value, use its constructor<br /><i>DateTime dateValue = new DateTime(2016, 10, 16);</i><br /><br /><b>Hint:</b> To specify a "Never" date, you can use DateTime.MaxValue as a special value, or use your own technique<br /><br /></li>
+<li>Display a summary in natural and sorted order like the screenshot above by iterating through the populated collection. Use composite strings to format the output. Place your output code in a static method in a dedicated output class. For full marks, make your output look exactly like the screenshot</li>
+</ol>
+<p>Feel free to write any other methods that help you get the job done, though this is not required.</p>
+<h3>Submitting Your Finished Project</h3>
+<ul>
+<li>Zip up your entire project</li>
+<li>Submit your zipped file to Midterm Exam in the D2L Dropbox</li>
+</ul>
+<p><br /><br /></p>
+</body>
+</html>

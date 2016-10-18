@@ -1,0 +1,17 @@
+Sort by: 
+<select ng-model="orderProp">
+    <option class="option" value="suit">Suit</option>
+    <option class="option" value="numOrd">Number</option>
+</select>
+Number search: <input type="text" ng-model="searchTerm.card.number">
+Suit search: <input type="text" class="cards-suit-search" ng-model="searchTerm.card.suit"><br />
+<table id="grid-content">
+    <tr><th><th><th>Number</th><th>Suit</th></tr>
+    <tr ng-repeat="card in cards | orderBy:orderProp |  filter:searchTerm.card ">
+        <td><a class="view" href="#/home/number/{{card.number}}/suit/{{card.suit}}">View</a></td>
+        <td><a class="delete" href="#/delete/number/{{card.number}}/suit/{{card.suit}}">Delete</a></td>
+        <td class="card-number">{{card.number}}</td>
+        <td class="card-suit">{{card.suit}}</td>
+    </tr>
+</table>
+<br />
